@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.main{
+    width: 100%;
+    /* border: 1px solid black; */
+    height: 700px;
+
+}
+
+
+.slider {
+    width: 100%;
+    height:100%;
+    /* max-width: 900px; */
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    border: 1px solid black;
+    background-image: url(img1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .item {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff ;
+  }
+  
+  /* Prev and Next Arrows */
+  .slick-prevs, .slick-nexts {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #f1f1f1;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    visibility: visible;
+  }
+  
+  .slick-nexts {
+  right: 8px;
+  }
+  
+  .slick-prevs {
+    left: 8px;
+    z-index: 1;
+  }
+  
+
+  
+  /* Slider Dots Styles */
+  
+  .slider-nav {
+      display: flex;
+      width: 100px;
+      overflow: hidden;  
+      margin: 10px auto;
+      height: 50px;
+      align-items: center;
+      padding:  0 3px;
+    position: relative;
+  }
+  .slider-nav ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      transition: all ease 0.4s;
+    bottom: auto;
+  }
+  
+  .slider-nav ul li button {
+    font-size: 0;
+    width: 10px;
+    height: 10px;
+    border: none;
+    border-radius: 50%; /* Default shape is a circle */
+    background: #d3d3d3;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for inactive dots */
+    transform: scale(0.5) /* Smooth transition for inactive dots */
+  }
+  
+  .slider-nav ul li button::before {
+    display: none;
+  }
+  
+  .slider-nav ul li.dot--medium button {
+      transform: scale(0.8)
+  }
+  
+  .slider-nav ul li button {
+      font-size: 0;
+      width: 10px;
+      height: 10px;
+      border: none;
+      border-radius: 50%;
+      background: #d3d3d3;
+      padding: 0;
+      cursor: pointer;
+  }
+  
+  .slider-nav ul li {
+      margin: 0;
+      margin-right: 10px;
+      line-height: 0;
+  }
+  
+  .slider-nav ul li:last-child {
+      margin-right: 0;
+  }
+  
+   /* Active Dot Rectangle Animation */
+  .slider-nav ul li.slick-active button {
+    background-color: #000000;
+    transform: scale(1.2);
+    animation: circle-to-rectangle 0.4s forwards; /* Animation to transform to rectangle */
+    width: 20px; /* Rectangle width */
+    height: 10px; /* Rectangle height */
+    border-radius: 15px; /* Rounded rectangle */
+  }
+  
+  /* Define the circle-to-rectangle animation */
+  @keyframes circle-to-rectangle {
+    0% {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%; /* Start as a circle */
+    }
+    100% {
+      width: 20px;
+      height: 10px;
+      border-radius: 15px; /* End as a rectangle with rounded corners */
+    }
+  }

@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#row1{
+    height: 80px;
+    background-color: #FFFFFF;
+}
+#a1{
+    text-decoration: none;
+    color: black;
+}
+#icon1{
+    font-size: 20px;
+}

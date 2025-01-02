@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.c1{
+    height: 160px;
+    width: 160px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-image: url(c1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.c2{
+    height: 160px;
+    width: 160px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-image: url(c2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.c3{
+    height: 160px;
+    width: 160px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-image: url(c3.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.c4{
+    height: 160px;
+    width: 160px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-image: url(c4.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.c5{
+    height: 160px;
+    width: 160px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-image: url(c5.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.c6{
+    height: 160px;
+    width: 160px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-image: url(c6.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.c7{
+    height: 160px;
+    width: 160px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-image: url(c7.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
