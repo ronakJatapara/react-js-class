@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#login{
+    width: 400px;
+    height: 550px;
+    border: 1px solid black;
+    background-color: aliceblue;
+    position: relative;
+}
+.button{
+    width: 90%;
+    height: 40px;
+    border: 1px solid rgb(127, 126, 126);
+    margin-left: 5%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+.btn1{
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid rgb(126, 126, 126); */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#A943B0,#A943B0,#B744AC,#B744AC,#C843A7,#C843A7,#DA43A0,#DA43A0,#E7419E,#E7419E,#F34298,#F34298);
+    cursor: pointer;
+
+}
+.btn2{
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid rgb(126, 125, 125); */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: linear-gradient(#A943B0,#A943B0,#B744AC,#B744AC,#C843A7,#C843A7,#DA43A0,#DA43A0,#E7419E,#E7419E,#F34298,#F34298) */
+    cursor: pointer;
+
+}
+#loginFont{
+    font-size: 25px;
+}
+#signupFont{
+    font-size: 25px;
+}
+#email{
+    width: 90%;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+#email::placeholder{
+    padding-left: 30px;
+    color: black;
+}
+
+#password{
+    width: 90%;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+#password::placeholder{
+    padding-left: 30px;
+    color: black;
+}
+#p1{
+    color: #F34298;
+    position: absolute;
+    left: 5%;
+    font-weight: bold;
+    cursor: pointer;
+}
+#btn3{
+    width: 90%;
+    background:linear-gradient(#A943B0,#A943B0,#B744AC,#B744AC,#C843A7,#C843A7,#DA43A0,#DA43A0,#E7419E,#E7419E,#F34298,#F34298) ;
+    height: 40px;
+    margin-top: 100px;
+}
+#p2{
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    padding-top: 30px;
+
+}
+#p3{
+    color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+
+    
+
+}
+#p4{
+    color: #F34298;
+}
+
+
+
+
+/* signup start  */
+
+
+#signup{
+    width: 400px;
+    height: 550px;
+    border: 1px solid black;
+    background-color: aliceblue;
+    position: relative;
+}
+.btn4{
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid rgb(126, 125, 125); */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* background: linear-gradient(#A943B0,#A943B0,#B744AC,#B744AC,#C843A7,#C843A7,#DA43A0,#DA43A0,#E7419E,#E7419E,#F34298,#F34298) */
+
+}
+
+
+.btn5{
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid rgb(126, 126, 126); */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#A943B0,#A943B0,#B744AC,#B744AC,#C843A7,#C843A7,#DA43A0,#DA43A0,#E7419E,#E7419E,#F34298,#F34298);
+    cursor: pointer;
+
+
+}
+#user{
+    width: 90%;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+#user::placeholder{
+    padding-left: 30px;
+    color: black;
+}
+
+#p3{
+    padding-top: 10px;
+}
+#btn6{
+    width: 90%;
+    background:linear-gradient(#A943B0,#A943B0,#B744AC,#B744AC,#C843A7,#C843A7,#DA43A0,#DA43A0,#E7419E,#E7419E,#F34298,#F34298) ;
+    height: 40px;
+    margin-top: 60px;
+}
