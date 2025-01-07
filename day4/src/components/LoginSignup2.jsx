@@ -14,10 +14,9 @@ function LoginSignup2()
    const [Email,setEmail] = useState("")
    const [Password,setPassword] = useState("")
    const [Confirm,setConfirm] = useState("")
+   const [Arr,setArr] = useState([])
    const [LoginEmail,setLoginEmail] = useState("")
    const [LoginPass,setLoginPass] = useState("")
-   const [Arr,setArr] = useState([])
-
 
 
 
@@ -42,11 +41,28 @@ function LoginSignup2()
 
    const loginfunction = () => {
 
-    let a = Arr.filter((el)=> el.Email == LoginEmail && el.Password == LoginPass);
+    let a = Arr.filter((el)=> el.Email == LoginEmail);
 
-    if(a[0].Email != LoginEmail && a[0].Password == LoginPass )
+    if(a==0)
     {
         
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Email went wrong!",
+            footer: '<a href="#">Why do I have this issue?</a>'
+          });
+    }
+    else if(a[0].Password != LoginPass)
+    {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Password went wrong!",
+            footer: '<a href="#">Why do I have this issue?</a>'
+          });
+    }
+    else{
         Swal.fire({
             title: "Good job!",
             text: "You clicked the button!",
@@ -54,9 +70,6 @@ function LoginSignup2()
           });
           setLoginEmail("")
           setLoginPass("")
-    }
-    else {
-        alert("error")
     }
 
 
