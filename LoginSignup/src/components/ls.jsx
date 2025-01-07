@@ -45,14 +45,31 @@ console.log(a);
 
  if(a[0].email != loginEmail)
  {
-    alert("error in email")
+    Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Email went wrong!",
+        footer: '<a href="#">Why do I have this issue?</a>'
+      });
  }
  else if(a[0].password != loginPass)
  {
-    alert("error in password")
+    
+    Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Password went wrong!",
+        footer: '<a href="#">Why do I have this issue?</a>'
+      });
  }
  else{
-    alert("welcome")
+    Swal.fire({
+        title: "Good job!",
+        text: "You clicked the button!",
+        icon: "success"
+      });
+      setLoginEmail("")
+      setLoginPass("")
  }
    
    
