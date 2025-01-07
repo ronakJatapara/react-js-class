@@ -1,10 +1,72 @@
 import React , {useState} from "react";
 import "./ls.css"
+import { use } from "react";
 function LoginSignup()
 {
 
     const [State,setState] = useState(true)
+    const [username,setUsesrname] = useState("");
+    const [email,setEmail] = useState("")
+    const[password,setPassword] = useState("");
+    const [loginEmail,setLoginEmail] =useState("")
+    const [loginPass,setLoginPass] =useState("")
+    const [arr,setArr]=useState([])
 
+
+
+
+  
+    const submitdetails = () => {
+
+        let obj={       
+           username,
+           email,
+           password
+    }   
+    
+    setArr([...arr,obj])
+    // alert("sign up succesfull")
+    
+
+    setEmail("")
+    setUsesrname("")
+    setPassword("")
+    
+    }
+//    console.log(arr);
+   
+
+    
+   const logindetails=()=>{
+
+const a = arr.filter((el)=> el.email == loginEmail  && el.password == loginPass )
+console.log(a);
+
+
+ if(a[0].email != loginEmail)
+ {
+    alert("error in email")
+ }
+ else if(a[0].password != loginPass)
+ {
+    alert("error in password")
+ }
+ else{
+    alert("welcome")
+ }
+   
+   
+
+
+   }
+
+   
+
+
+
+    
+
+  
 
     return(
         <>
@@ -21,13 +83,13 @@ function LoginSignup()
         </div>
         <br /><br />
 
-        <input type="text" name="" id="email" placeholder="Email*" />
+        <input type="text" name=""  id="email" placeholder="Email*" onChange={(e)=>{setLoginEmail(e.target.value)}}/>
         <br />
         <br />
-        <input type="text" name="" id="password"  placeholder="Password*"/>
+        <input type="text" name=""  id="password"  placeholder="Password*" onChange={(e)=>{setLoginPass(e.target.value)}}/>
         <p id="p1">Forgot Password?</p>
 
-        <button id="btn3">Login</button>
+        <button id="btn3" onClick={logindetails}>Login</button>
         <p id="p2" onClick={()=>{setState(false)}}>Not a Member? <font id="p3">Sign-up</font></p>
         
         </div>   :
@@ -45,21 +107,28 @@ function LoginSignup()
             </div>
         </div>
         <br /><br />
-        <input type="text" name="" id="user" placeholder="Username*" />
+        <input type="text" name="" id="user" placeholder="Username*" value={username} onChange={(e)=>{setUsesrname(e.target.value)}} />
         <br />
         <br />
-        <input type="text" name="" id="email" placeholder="Email*" />
+        <input type="text" name="" id="email" placeholder="Email*" value={email} onChange={(e)=>{setEmail(e.target.value)}} />
         <br />
         <br />
-        <input type="text" name="" id="password"  placeholder="Password*"/>
+        <input type="text" name="" id="password"  placeholder="Password*" value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
        
 
-        <button id="btn6">Sign-up</button>
+        <button id="btn6" onClick={submitdetails}>Sign-up</button>
         <p id="p3" onClick={()=>{setState(true)}}>Have an Accoount? <font id="p4">Login</font></p>
         
         </div> }
         </>
-    )
+    )   
 }
 
+
+
+
 export default LoginSignup
+
+
+
+   
