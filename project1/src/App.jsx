@@ -11,7 +11,7 @@ const[State,setState] =useState(true)
   <button id="btn1" onClick={()=>{setState(true)}}>form</button>
   <button id="btn2" onClick={()=>{setState(false)}}>product</button>
   <br /><br />
-<Form data={State}/>
+  <Form data={State}/>
   </>
   )
 }

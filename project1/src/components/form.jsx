@@ -24,7 +24,7 @@ const submitdetails=()=>{
         price
     }
     setArr([...arr,obj])
-// console.log(arr);
+// console.log(arr);    
 setImg("")
 setName("")
 setPrice("")
@@ -34,7 +34,7 @@ setPrice("")
 
     return(
 <>
-{props.data== true ?
+{props.data == true ?
 <div className="main">
 <input type="text" name="" id="" value={img} placeholder="product img" onChange={(e)=>{setImg(e.target.value)}}/>
 <br /><br />
