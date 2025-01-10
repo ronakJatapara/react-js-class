@@ -9,7 +9,7 @@
     justify-content: space-evenly;
     align-items: center;
 }
-#boxes{
+.boxes{
     width: 22%;
     display: flex;
     justify-content: center;

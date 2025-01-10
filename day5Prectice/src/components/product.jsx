@@ -37,7 +37,7 @@ function Product()
 <div className="row">
  {
        product ? product.map((el)=>{
-            return  <div className="col-3" id="boxes">
+            return  <div className="col-sm-12 col-md-6 col-lg-3" id="boxes">
 <div className="card" >
  <img src={el.thumbnail} alt="" />
   <div className="card-body d-flex justify-content-center align-items-center flex-column">
