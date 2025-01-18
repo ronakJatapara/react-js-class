@@ -2,15 +2,17 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Navbar from './components/navbar'
+import Otp from './components/otp'
+import Otp2 from './components/OTP2'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-  <>
-  <Navbar/>
-  </>
+ <>
+ {/* <Otp></Otp> */}
+ <Otp2 />
+ </>
   )
 }
 
