@@ -55,7 +55,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function SearchAppBar() {
   return (
-    <Box id="navbar" sx={{ flexGrow: 1 }}>
+   
+    <>
+     <Box id="navbar" sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{ backgroundColor: 'white', color: 'black' }}>
         <Toolbar>
        {/* <img src="/logo.png" alt=""  style={{ height: '40px', marginRight: '20px' }} /> */}
@@ -88,5 +90,12 @@ export default function SearchAppBar() {
         </Toolbar>
       </AppBar>
     </Box>
+    <div className="container">
+ 
+  </div>
+    
+    
+    
+    </>
   );
 }

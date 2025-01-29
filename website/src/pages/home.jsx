@@ -6,7 +6,7 @@ function Home()
 {
 	return (
 		<>
-		 
+{/* 		 
 		 <div class="swiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide">Slide 1</div>
@@ -20,7 +20,7 @@ function Home()
 
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
-  </div>
+  </div> */}
 
  
   
@@ -34,3 +34,8 @@ function Home()
 
 
 export default Home
+
+
+
+
+
