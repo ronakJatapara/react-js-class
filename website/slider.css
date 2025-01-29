@@ -1,0 +1,22 @@
+
+.swiper, .swiper2 {
+  width: 100vw;
+  height: auto;
+	overflow: hidden;
+}
+
+.swiper2 {
+  margin-top: 15px;
+}
+
+/* スライドの動き等速 */
+.swiper-wrapper {
+  transition-timing-function: linear;
+}
+/* 画像のサイズ調整 */
+.swiper-slide img {
+  aspect-ratio: 300 / 200;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}

@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#navbar{
+    background-color: white;
+    position: relative;
+}
+.search-icon{
+    color: black;
+}
+#search{
+    margin-right: 200px;
+    position: absolute;
+     right: 250px;
+    
+}
+#NavLogin{
+    text-decoration: none;
+    color: black;
+ position: absolute;
+ right: 250px;
+}
+#heart{
+    position: absolute;
+    right: 210px;
+    color: black;
+}
+#bag{
+    position: absolute;
+    right: 170px;
+    color: black;
+}
