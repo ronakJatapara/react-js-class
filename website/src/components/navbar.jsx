@@ -1,101 +1,42 @@
-import React from 'react';
-import { styled, alpha } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import { Link } from 'react-router-dom';
-import './Navbar.css';
-// import logo from './assets/logo.png'; 
+import React from 'react'
+import './Navbar.css'
+import { Link } from 'react-router'
 
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(1),
-    width: 'auto',
-  },
-}));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  width: '100%',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    [theme.breakpoints.up('sm')]: {
-      width: '12ch',
-      '&:focus': {
-        width: '20ch',
-      },
-    },
-  },
-}));
-
-export default function SearchAppBar() {
+function Navbar() {
   return (
-   
-    <>
-     <Box id="navbar" sx={{ flexGrow: 1 }}>
-      <AppBar position="static" style={{ backgroundColor: 'white', color: 'black' }}>
-        <Toolbar>
-       {/* <img src="/logo.png" alt=""  style={{ height: '40px', marginRight: '20px' }} /> */}
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
-            MUI
-          </Typography>
-          <Search sx={{borderRadius:"5px"}} id='search'>
-            <SearchIconWrapper>
-              <SearchIcon sx={{ color: 'black' }} />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-              style={{ backgroundColor: '#EAEAEA' }}
-            />
-          </Search>
-
-          {/* <span sx={{paddingLeft:'20px'}}>|</span> */}
-
-       <Link to="/Login" id='NavLogin' >LOGIN</Link>
-       <Link id='heart'><i class="fa-regular fa-heart"></i></Link>
-       <Link id='bag'><i class="fa-solid fa-bag-shopping"></i></Link>
-
-
-        </Toolbar>
-      </AppBar>
-    </Box>
-    <div className="container">
- 
-  </div>
-    
-    
-    
-    </>
-  );
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light ms-5">
+        <div class="container-fluid">
+            <a class="navbar-brand"><img src="https://images.bewakoof.com/web/ic-desktop-bwkf-trademark-logo.svg" width={"150px"} className="ms-5" alt="" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse mt-2" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" >Men</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" >Women</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" >Mobile Covers</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control" type="search" placeholder="Search by products" id='in1' aria-label="Search"></input>
+                </form>
+                {/* <p class="pt-3" id='line'>|</p> */}
+                <p id='line'>|</p>
+                <Link to="/login"><i class="fa-solid fa-user"></i></Link>
+                <a class="icon"><i class="fa-regular fa-heart" id="fa-heart"></i></a>
+                <a class="icon"><i class="fa-solid fa-bag-shopping"></i></a>
+            </div>
+        </div>
+    </nav>
+    </div>
+  )
 }
+
+export default Navbar

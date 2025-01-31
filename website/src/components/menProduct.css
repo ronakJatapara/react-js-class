@@ -1,0 +1,272 @@
+*{
+    margin: 0;
+    padding: 0;   
+    box-sizing: border-box;
+}
+
+.free{
+    width: 100%;
+    background-color: #207BB4;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-top: 10px; */
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    display:flex ;
+}
+
+
+
+/* General Styles */
+/* body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    padding: 20px;
+  } */
+  
+  /* Sidebar */
+  .id{
+    width:22%;
+  }
+  .sidebar {
+    width: 100%;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+    /* height: 500px; */
+    position: sticky;
+    top: 0;
+
+  }
+  
+  /* Sidebar Header */
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar-header h3 {
+    margin: 0;
+  }
+  
+  .sidebar-header span {
+    color: #333;
+  }
+  
+  .clear-all {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  /* Filter Section */
+  .filter {
+    border-bottom: 1px solid #ddd;
+    padding: 8px 0;
+    cursor: pointer;
+  }
+  
+  .filter:last-child {
+    border-bottom: none;
+  }
+  
+  .filter-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    color: #333;
+    font-weight: normal;
+    padding-top: 20px;
+    font-size: 20px;
+  }
+  
+  .filter-title .arrow {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Active Filters */
+  .filter-title.active .arrow {
+    transform: rotate(180deg);
+  }
+  
+  /* Dot Indicator */
+  .dot {
+    width: 6px;
+    height: 6px;
+    background: gray;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .active-dot {
+    background: gray;
+  }
+  
+  /* Filter Options */
+  .filter-options {
+    display: none;
+    padding: 5px 0 10px 15px;
+    font-size: 14px;
+  }
+  
+  .filter-options label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* Checkbox Styling */d
+  input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  .id1{
+    width: 78%;
+    /* border: 1px solid red; */
+  }
+  .mainBox{
+    height: 680px;
+    width: 100%;
+    /* border: 1px solid black; */
+    cursor: pointer;
+  }
+  .card-img{
+    height: 470px;
+    width: 100%;
+    /* border: 1px solid black; */
+    position: relative;
+  }
+ .card-img img{
+    height: 100%;
+    width: 100%;
+ }
+  .card-text{
+    height: 130px;
+    width: 100%;
+    /* border: 1px solid red; */
+  }
+  #p11{
+    position: absolute;
+    top: 0;
+    padding-left:10px;
+    color: black;
+    font-weight: bold;
+  }
+  #p22{
+    position: absolute;
+    top: 30px;
+    padding-left:10px;
+    color: #646B77;
+  }
+  #p33{
+    position: absolute;
+    top: 55px;
+    padding-left:10px;
+    font-size: 19px;
+    font-weight: bold;
+  }
+
+
+  #p44{
+    position: absolute;
+    top: 59px;
+    padding-left:10px;
+    left: 60px;
+    font-size: 15px;
+    text-decoration: line-through;
+  }
+  #p55{
+    position: absolute;
+    top: 59px;
+    padding-left:10px;
+    left: 110px;
+    color: #00B53A;
+
+  }
+  .fa-heart{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+  }
+  .smallBox{
+    height: 24px;
+    /* width: 150px; */
+    border: 1px solid #909090;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+  }
+  #p66{
+    color: black;
+    font-size: 15px;
+
+    color: #909090;
+  }
+
+  #star{
+    height: 33px;
+    width: 60px;
+    /* border: 1px solid black; */
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    border-radius: 20px;
+    background-color: white;
+    cursor: pointer;
+  }
+  #star img{
+    height: 18px;
+    width: 23px;
+    margin-left: 6px;
+    position: absolute;
+    top: 6px;
+  }
+  #star-text{
+    /* padding-top: 5px; */
+    position: absolute;
+    top: 4px;
+    right: 8px;
+  }
+  #fit {
+    height: 18px;
+    width: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* border: 1px solid black; */
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(43, 43, 43, 0.5), rgba(0, 0, 0, 0.5)), url("your-image.jpg");
+    background-blend-mode: multiply; /* or overlay */
+    background-size: cover;
+    background-position: center;
+    padding-top: 12px;
+    color: white;
+}
+#sideText{
+  position: absolute;
+  left: 30px;
+}
+.sort{
+  height: 45px;
+  width: 200px;
+  border: 1px solid rgb(139, 135, 135);
+}
+#Popularity{
+  font-weight: bold;
+}
+

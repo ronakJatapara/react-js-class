@@ -1,38 +1,48 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.navbar {
+    background-color: #ffffff;
+    position: relative;
+}
+.navbar-brand {
+    font-weight: bold;
+}
+.navbar-nav .nav-link {
+    margin-right: 1rem;
+}
+.navbar .form-control {
+    max-width: 300px;
+}
+.icon {
+    margin-left: 1rem;
 }
 
-#navbar{
-    background-color: white;
-    position: relative;
- /* position: sticky;
- top: 0;
- z-index: 1; */
+#in1{
+    width: 700px;
+    margin-right: 300px;
 }
-.search-icon{
+#line{
+    /* padding-right: 200px; */
+    position: absolute;
+    right: 300px;
+    top: 25px;
+    color: gray;
+}
+
+
+.fa-user{
+    position: absolute;
+    top: 30px;
+    right: 250px;
     color: black;
 }
-#search{
-    margin-right: 200px;
+#fa-heart{
     position: absolute;
-     right: 250px;
-    
-}
-#NavLogin{
-    text-decoration: none;
-    color: black;
- position: absolute;
- right: 250px;
-}
-#heart{
-    position: absolute;
+    top: 30px;
     right: 210px;
     color: black;
 }
-#bag{
+.fa-bag-shopping{
     position: absolute;
+    top: 30px;
     right: 170px;
-    color: black;
+    color: black;  
 }

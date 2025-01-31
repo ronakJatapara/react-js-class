@@ -1,22 +1,103 @@
-
-.swiper, .swiper2 {
-  width: 100vw;
-  height: auto;
-	overflow: hidden;
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  padding: 20px;
 }
 
-.swiper2 {
-  margin-top: 15px;
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: 500px;
 }
 
-/* スライドの動き等速 */
-.swiper-wrapper {
-  transition-timing-function: linear;
+/* Sidebar Header */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
-/* 画像のサイズ調整 */
-.swiper-slide img {
-  aspect-ratio: 300 / 200;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+
+.sidebar-header h3 {
+  margin: 0;
+}
+
+.sidebar-header span {
+  color: #333;
+}
+
+.clear-all {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Filter Section */
+.filter {
+  border-bottom: 1px solid #ddd;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.filter:last-child {
+  border-bottom: none;
+}
+
+.filter-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  color: #333;
+  font-weight: normal;
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+.filter-title .arrow {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+/* Active Filters */
+.filter-title.active .arrow {
+  transform: rotate(180deg);
+}
+
+/* Dot Indicator */
+.dot {
+  width: 6px;
+  height: 6px;
+  background: gray;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.active-dot {
+  background: #007bff;
+}
+
+/* Filter Options */
+.filter-options {
+  display: none;
+  padding: 5px 0 10px 15px;
+  font-size: 14px;
+}
+
+.filter-options label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Checkbox Styling */
+input[type="checkbox"] {
+  margin-right: 8px;
 }
