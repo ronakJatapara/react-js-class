@@ -2,7 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import "../components/menProduct.css"
 import { colors } from '@mui/material';
-
+// import Link from '@mui/material';
+import { Link } from 'react-router-dom';
 function MenProducts() {
   const [arr, setArr] = useState([]);
 
@@ -204,7 +205,7 @@ function MenProducts() {
 
             <div className="col-9 id1">
     
-    <div className="row mb-3" style={{cursor:"pointer"}}>
+    <div className="row " style={{cursor:"pointer"}}>
      <div className="col-6"> <span ><font className='fs-4'>Oversized T Shirt Men</font><font className="ps-3" style={{fontSize:"16px", color:"gray"}}>1168 Products</font></span></div>
      <div className="col-6 d-flex justify-content-end">
       <div className="sort  d-flex justify-content-center align-items-center">
@@ -221,7 +222,7 @@ function MenProducts() {
                   arr.map((el, ind) => {
                     return (
                       <div className="col-4">
-                        <div className="mainBox">
+                        <div className="mainBox" onClick={el.id}>
                           <div className="card-img">
                             <img src={el.img} alt="" />
                             <div id='star'>
@@ -254,14 +255,275 @@ function MenProducts() {
                 }
               </div>
 
-
+              <div className="row mt-5">
+          <div className="col-12 d-flex justify-content-center">
+            <img src="https://www.bewakoof.com/images/bwkf-loader.gif" alt="" id='gif'/>
+          </div>
+        </div>
 
 
             </div>
           </div>
         </div>
 
+
+
+
+
+    
+   <div className="container mt-5">
+
+   <div className="row mt-5">
+          <div className="col-12 mt-5">
+            <p id='pp1' className='pt-5' style={{fontWeight:"bold"}}>Oversized T-Shirts for Men</p>
+          </div>
+          <div className="col-12">
+            <p id='pp2'>The Power Of Oversized T Shirt Men In Modern Fashion</p>
+            <p style={{color:"#777677" , fontSize:"14px"}}>Why settle for ordinary when you can go oversized?</p>
+            <p style={{color:"#777677" , fontSize:"14px"}}>Oversized tees for men are the answer to every modern wardrobe dilemma. Wondering if they’re still in trend? Absolutely! These loose-fitting essentials have taken the fashion scene by storm and show no signs of slowing down. Loved for their laid-back vibe and versatility, oversized T-shirts perfectly balance comfort and style, making oversized t shirt men a must-have for your collection.
+
+</p>
+
+<p style={{color:"#777677" , fontSize:"14px"}}>At Bewakoof, we bring you a wide range of oversized t shirt for men, tailored for the trend-savvy yet comfort-loving man. Dive into this blog to explore why oversized tees are more than just a trend—they’re a lifestyle statement
+
+</p>
+
+            
+          </div>
+
+
+          <div className="col-12">
+            <p id='pp2'>The Range Of Male Oversized T Shirt We Offer</p>
+            <p style={{color:"#777677" , fontSize:"14px"}}>
+            When it comes to over sized t shirt men, Bewakoof ensures you have plenty of options to choose from. here’s a glimpse of the types :</p>
+            <p style={{color:"#777677" , fontSize:"14px"}}>
+Oversized T-Shirts:
+
+<br />
+<br />
+
+Classic oversize men tees are a staple for those who love a relaxed and effortless vibe. With bold graphic prints, catchy slogans, and minimalist designs, these T-shirts let you make a statement without trying too hard.
+
+</p>
+
+<p style={{color:"#777677" , fontSize:"14px"}}>
+Oversized Polo T-Shirts:
+
+<br /><br />
+For a more refined yet casual look, oversized polo T-shirts are your go-to option. Blending oversized comfort with a classic polo collar, these are ideal for semi-casual outings and adding a hint of elegance to your look.
+
+</p>
+
+            
+          </div>
+
+
+
+
+          <div className="col-12">
+            <p id='pp2'>Occasions Call For Oversized Tees: Looks For Every Event
+            </p>
+            <p style={{color:"#777677" , fontSize:"14px"}}>Tuitions: Study In Comfort
+<br /><br />
+
+
+Pair a classic oversizedt shirt men with slim-fit denim jeans for men for a balanced and relaxed look. Add sneakers and a backpack to keep it casual yet organised for those long study sessions.</p>
+            <p style={{color:"#777677" , fontSize:"14px"}}>Oversized tees for men are the answer to every modern wardrobe dilemma. Wondering if they’re still in trend? Absolutely! These loose-fitting essentials have taken the fashion scene by storm and show no signs of slowing down. Loved for their laid-back vibe and versatility, oversized T-shirts perfectly balance comfort and style, making oversized t shirt men a must-have for your collection.
+
+</p>
+
+<p style={{color:"#777677" , fontSize:"14px"}}>At Bewakoof, we bring you a wide range of oversized t shirt for men, tailored for the trend-savvy yet comfort-loving man. Dive into this blog to explore why oversized tees are more than just a trend—they’re a lifestyle statement
+
+</p>
+
+            
+          </div>
+
+
+
+
+
+
+
+
+          <div className="col-12">
+            <p id='pp2'>All You Need In Oversized Male T Shirt At Bewakoof
+            </p>
+            <p style={{color:"#777677" , fontSize:"14px"}}>Sizes For Everyone:
+<br /><br />
+
+We offer over size tshirts for men in sizes ranging from XS to 2XL+ including xxxl t-shirts. No matter your body type, you can enjoy the relaxed and trendy vibe of our tees.
+
+
+
+Trusted Brands:
+
+<br /><br />
+
+
+Our collection includes trusted brands like Bewakoof®, Bewakoof Air® 1.0, and Weezy, each offering unique styles to suit your taste.
+
+<br /><br />
+
+
+Vibrant Colours:
+<br /><br />
+
+
+With a wide colour palette, including black, white, blue, green, and brown, you’ll never run out of options. Whether you prefer classic shades or bold hues, we’ve got oversized t shirt male for every mood.
+
+
+<br /><br />
+
+Unique Designs:
+<br /><br />
+
+
+Bold and Expressive Styles
+
+<br /><br />
+
+Designs like graphic prints, typography, and unique printed patterns let you showcase your personality effortlessly. Whether it's fandom merch or quirky slogans, these styles are perfect.
+<br /><br />
+
+
+
+Timeless Classics
+<br /><br />
+
+
+Solid colours, stripes, checks, and subtle self-designs bring a polished and minimal look to your outfit. These versatile options are ideal for everyday wear with a touch of sophistication.
+
+
+<br /><br />
+
+Creative and Vibrant Patterns
+
+<br /><br />
+
+Artistic designs like tie & dye, abstract prints, and ombre gradients add a playful and colourful flair to your wardrobe. These styles are perfect for casual days when you want to stand out.
+<br /><br />
+
+
+
+Edgy and Dynamic Designs
+
+<br /><br />
+
+Camouflage, animal prints, colour block patterns, and cut & sew styles offer a bold and modern appeal. These striking designs add a touch of adventure and energy to your everyday look.
+
+
+<br /><br />
+
+Detailed and Premium Touches
+
+
+Textured fabrics and intricate embroidery elevate your style with subtle elegance. These refined options are perfect for when you want something stylish.
+
+<br /><br />
+
+
+Versatile Fits:
+
+<br /><br />
+
+Our mens oversized tee shirts come in both regular oversized and super loose fits to match your comfort level. They are ideal for creating a relaxed, modern look that’s easy to style.
+
+
+<br /><br />
+
+Sleeve And Neck Options:
+<br /><br />
+
+
+Choose from half sleeves, full sleeves, or raglan sleeves, depending on your preferred style. Neck options include round neck, polo, v-neck, hooded, and Henley necks for added versatility.
+
+<br /><br />
+
+
+Unbeatable Discounts And Tribe Membership Perks:
+
+<br /><br />
+
+Enjoy discounts ranging from 10% to 70%, making our collection budget-friendly. Tribe members also benefit from exclusive deals and savings, making your shopping experience even more rewarding.
+
+
+
+</p>
+            
+
+            
+          </div>
+
+
+<br /><br />
+<br /><br /><br />
+          <div className="col-12">
+            <p id='pp2'>Shop Popular Products
+            </p>
+            
+            <div className="row">
+              <div className="col-11">
+            <p style={{color:"black" , fontSize:"14px"}}>Oversized T-shirts for Men<br /><br /></p>
+            <p ><Link style={{textDecoration:"", color:"gray"}} to="/singleProduct">Price Men's Grey Eternity Graphic Printed Oversized T-shirt</Link></p>
+            <p ><Link style={{textDecoration:"", color:"gray"}} to="/singleProduct">Men's Black The Panda Way Graphic Printed Oversized T-shirt</Link></p>
+            <p ><Link style={{textDecoration:"", color:"gray"}} to="/singleProduct">Men's Purple Beast Within Graphic Printed Oversized T-shirt</Link></p>
+            <p ><Link style={{textDecoration:"", color:"gray"}} to="/singleProduct">Men's Black Oversized T-shirt</Link></p>
+            <p ><Link style={{textDecoration:"", color:"gray"}} to="/singleProduct">Men's White & Blue Partner In Crime Tie & Dye Oversized T-shirt	699</Link></p>
+            <p ><Link style={{textDecoration:"", color:"gray"}} to="/singleProduct">Men's Black Space Adventure Graphic Printed Oversized T-shirt	599</Link></p>
+            <p ><Link style={{textDecoration:"", color:"gray"}} to="/singleProduct">Men's Black The Boys Typographic Oversized T-shirt	607</Link></p>
+            <p ><Link style={{textDecoration:"", color:"gray"}} to="/singleProduct">Men's Grey Wakanda Forever Graphic Printed Oversized T-shirt	739 </Link></p>
+            <p ><Link style={{textDecoration:"", color:"gray"}} to="/singleProduct">Men's Blue Luffy Graphic Printed Oversized T-shirt	799</Link></p>
+            <p ><Link style={{textDecoration:"", color:"gray"}} to="/singleProduct">Men's Blue Rick and Morty Graphic Printed Oversized T-shirt</Link></p>
+
+
+
+
+            
+
+
+
+
+              </div>
+              <div className="col-1">
+            <p style={{color:"#777677" , fontSize:"14px"}}>Price<br /><br /></p>
+            <p>799</p>
+            <p>599</p>
+            <p>579</p>
+            <p>699</p>
+            <p>599</p>
+            <p>607</p>
+            <p>739</p>
+            <p>799</p>
+            <p>899</p>
+            <p>699</p>
+
+
+              </div>
+            </div>
+
+            
+          </div>
+
+        </div>
+   </div>
+
+
+
+
+ 
+
+
+
+
+     
+
       </div>
+
+
+
+
+  
 
 
     

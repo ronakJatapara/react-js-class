@@ -134,7 +134,7 @@
     /* border: 1px solid red; */
   }
   .mainBox{
-    height: 680px;
+    height: 630px;
     width: 100%;
     /* border: 1px solid black; */
     cursor: pointer;
@@ -269,4 +269,17 @@
 #Popularity{
   font-weight: bold;
 }
+
+
+#gif{
+  /* border: 1px solid black; */
+  height: 50px;
+}
+
+#pp2{
+  color: rgb(70, 69, 69);
+}
+
+
+
 
