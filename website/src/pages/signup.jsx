@@ -57,7 +57,9 @@
       axios.post(`http://localhost:3000/users`,state)
       .then((res)=>{
         alert("done")
-        navigate("/home")
+        navigate("/")
+        localStorage.setItem("done",true)
+
       })
       .catch((err)=>{
       console.log(err);

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import "../components/menProduct.css"
 import { colors } from '@mui/material';
 // import Link from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 function MenProducts() {
   const [arr, setArr] = useState([]);
 
@@ -41,6 +41,13 @@ function MenProducts() {
   // Ensure filter functionality works when React updates the component
 
 
+   let navigate = useNavigate()
+
+     const handleSingle=(id)=>{
+      navigate(`/menSingleProduct/${id}`)
+      console.log(id);
+      
+     }
 
   return (
     <>
@@ -217,12 +224,20 @@ function MenProducts() {
       
     </div>
 
+
+
+
+   <div className="row mb-3">
+    <div className="col-12 ">
+      <img src="https://www.bewakoof.com/_next/image?url=https%3A%2F%2Fimages.bewakoof.com%2Fuploads%2Fcategory%2Fdesktop%2FOversized-T-shirts_Inside_Desktop-Banner_IK_(1)-1722407156.jpg&w=1200&q=75" alt="" style={{height:"320px" , width:"100%"}} />
+    </div>
+   </div>
               <div className="row">
                 {
                   arr.map((el, ind) => {
                     return (
-                      <div className="col-4">
-                        <div className="mainBox" onClick={el.id}>
+                      <div className="col-4" onClick={()=>{handleSingle(el.id)}}>
+                        <div className="mainBox" >
                           <div className="card-img">
                             <img src={el.img} alt="" />
                             <div id='star'>

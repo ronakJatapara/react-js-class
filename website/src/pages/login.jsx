@@ -79,7 +79,7 @@ const[error,setError] = useState("")
               text: "You clicked the button!",
               icon: "success"
             });
-            navigate("/home")
+            navigate("/")
 
           }
           
