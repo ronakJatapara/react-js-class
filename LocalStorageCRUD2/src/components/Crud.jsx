@@ -9,12 +9,26 @@ function Crud() {
 
 
      const[Arr,setArr]=useState([])
+    const[editIndex,seteditIndex] = useState(null)
 
-   const handleSubmit = ()=>{
 
+   const handleSubmit = (id)=>{
+   
+    if(editIndex == null)
+    {
+      
      let obj ={id:Date.now(),name,city,sub}
-      setArr([...Arr,obj])
-       localStorage.setItem("student",JSON.stringify([...Arr,obj]))
+     setArr([...Arr,obj])
+      localStorage.setItem("student",JSON.stringify([...Arr,obj]))
+    }
+    else{
+      let editData = Arr.find((item)=> item.id == editIndex)
+      editData.id = editIndex 
+      editData.name= name
+      editData.city = city
+      editData.sub =sub
+      localStorage.setItem("student", JSON.stringify(Arr))
+    }
 
 
      setName("")
@@ -43,14 +57,13 @@ function Crud() {
    
    }
  
-    const[editIn,setEditIn] = useState(null)
    const handleEdit = (id)=>{
       
     let EditData = Arr.find((item)=>item.id == id)
     setName(EditData.name)
     setCity(EditData.city)
     setSub(EditData.sub)
-    setEditIn(EditData)
+    seteditIndex(EditData)
 
       
 
@@ -65,7 +78,7 @@ function Crud() {
         <input type="text" name="" id="" placeholder='city' value={city} onChange={(e)=>setCity(e.target.value)} />
         <input type="text" name="" id="" placeholder='subject' value={sub} onChange={(e)=>setSub(e.target.value)} />
 
-        <button onClick={handleSubmit}>submit</button>
+        <button onClick={handleSubmit}>{editIndex == null ? "submit" : "update"}</button>
       
        
        <table border="1px" width="600px">
