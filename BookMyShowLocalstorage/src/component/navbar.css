@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#input1{
+    width: 80%;
+    height: 30px;
+    padding-left: 30px;
+}
+.fa-magnifying-glass{
+    position: absolute;
+    left: 45px;
+    top: 25px;
+}
