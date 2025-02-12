@@ -1,10 +1,12 @@
 import React, { useState , useEffect } from 'react'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import './form.css'
 
 function Editform() {
 
     const[edit,setEdit] = useState(JSON.parse(localStorage.getItem("data")) || [])
-    // console.log(edit);
+    const navigate = useNavigate();
+    console.log(edit);
 
 
     let {id} = useParams()
@@ -39,14 +41,13 @@ function Editform() {
       const handleSubmit = (e) => {
     e.preventDefault();
 
-    const updatedData = edit.map((item) =>
-      item.id == id ? { ...item, ...formData } : item
-    );
-
+    const updatedData = edit.filter((item) =>item.id == id ? { ...item, ...formData } : item);
+    
     localStorage.setItem("data", JSON.stringify(updatedData));
     setEdit(updatedData);
 
     navigate("/");
+    
   };
 
 
@@ -68,10 +69,10 @@ function Editform() {
       <div className="container-fluid">
     <div className="row d-flex justify-content-center align-items-center">
         
-        <div className="col-8 border d-flex justify-content-center align-items-center mt-5">
+        <div className="col-8  d-flex justify-content-center align-items-center mt-5">
 
 
-        <form action="" id='form'>     
+        <form action="" id='form' onSubmit={handleSubmit}>     
 <input type="text" name="image" id="inp1" value={formData.image}   placeholder='Movie Image' onChange={handleChange} />
 <br />
 <br />
@@ -80,13 +81,13 @@ function Editform() {
 <input type="text" name="type" id="inp3"value={formData.type} placeholder='Type' onChange={handleChange} />
 <br /><br />
 
-<input type="submit" value={"submit"} name="" id="" />
+<input type="submit" value={"submit"} name="" id="btn4" />
 
 
         </form>
         </div>
     </div>
-</div>
+      </div>
 
     </>
   )

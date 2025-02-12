@@ -43,7 +43,7 @@ function Form() {
 <div className="container-fluid">
     <div className="row d-flex justify-content-center align-items-center">
         
-        <div className="col-8 border d-flex justify-content-center align-items-center mt-5">
+        <div className="col-8  d-flex justify-content-center align-items-center mt-5">
 
 
         <form action="" id='form' onSubmit={handleSubmit}>     
@@ -55,7 +55,7 @@ function Form() {
 <input type="text" name="" id="inp3" value={type} placeholder='Type' onChange={(e)=>{setType(e.target.value)}} />
 <br /><br />
 
-<input type="submit" value={"submit"} name="" id="" />
+<input type="submit" value={"submit"} name="" id="btn4" />
 
 
         </form>

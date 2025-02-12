@@ -2,17 +2,22 @@
     margin: 0;
     padding: 0;
     border-radius: border-box;
+    /* background-color: #F5F5F5; */
 }
-
+ 
 #frame{
     overflow: hidden;
-    border: 1px solid black;
-}
+    /* border: 1px solid black;   */
+
+} 
+ 
 .img1{
-    /* height: 370px; */
+    /* height: px; */
     width: 100%;
-    border: 1px solid black;
+    /* border: 1px solid red; */
     border-radius: 10px;
+
+
 }
 .img1 img{
     height: 100%;
@@ -59,3 +64,60 @@ padding-left: 10px;
     /* padding: 10px; */
 
 }
+
+
+
+/* Ensure Swiper does not add extra spacing */
+  
+  /* Prevent extra spacing from pagination */
+  .swiper-pagination {
+    margin-bottom: 0 !important;
+  }
+  
+  /* Ensure swiper-slide doesn't expand unexpectedly */
+  .swiper-slide {
+    position: relative;
+    overflow: hidden;
+  }
+  
+
+  
+  /* Ensure the container does not stretch */
+  .container {
+    /* max-height: 700px; Adjust based on design */
+    overflow: hidden;
+  }
+  
+  /* Adjust image size to fit properly */
+  .img1 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+
+.swiper-pagination{
+   background-color: transparent;
+   display: block;
+}
+.swiper-pagination-bullet {
+    opacity: 0.6;
+    width: 10px;
+    height: 10px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* background-color: transparent; */
+  }
+  
+  .swiper-pagination-bullet-active {
+    background-color: #ff5733; 
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  
+  .swiper-pagination {
+    text-align: center; 
+  }
+  #swiper{
+    border: 1px solid black;
+  }
+  
