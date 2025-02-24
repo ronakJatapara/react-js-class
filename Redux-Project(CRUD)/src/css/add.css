@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#form{
+    width: 650px;
+    height: 550px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background:linear-gradient();
+}
+#outlined-basic1{
+    width: 80%;
+}
+#outlined-basic{
+    width: 40%;
+}
+#img1{
+    width: 250px;
+}
+#btn2{
+    width: 40%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #4BC2BE;
+    border: none;
+    color: white;
+    font-weight:500;
+   transition: .3s; 
+}
+#btn2:hover{
+    background-color: #b2f1ef;
+    color: rgb(69, 69, 69);
+}

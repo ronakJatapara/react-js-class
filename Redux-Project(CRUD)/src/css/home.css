@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#btn3{  
+    width: 100px;
+    height: 35px;
+    border: 1px solid black;
+    margin-left: 16px;
+
+}
+#btn4{
+    width: 100px;
+    height: 35px;
+    border: 1px solid black;
+    margin-left: 30px;
+}
