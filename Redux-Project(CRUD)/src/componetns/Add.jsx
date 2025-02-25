@@ -4,6 +4,7 @@
    import TextField from '@mui/material/TextField';
    import { useDispatch } from 'react-redux';
    import { fetchData } from '../feature/CrudSlice';
+import { useNavigate } from 'react-router-dom';
 
    function Add() {
 
@@ -13,16 +14,18 @@
       const [price,setPrice] =  useState("")
       const [category,setCategory] =  useState("")
       const [description,setDescription] =  useState("")
+      let navigate = useNavigate()
 
 
    let dispatch= useDispatch()
    const handleSubmit = (e) =>{
       e.preventDefault()
 
-   let obj = {id:Date.now(),url,title,price,category,description}
+   let obj = {url,title,price,category,description}
    console.log(obj);
 
       dispatch(fetchData(obj))
+
    }
 
 

@@ -21,7 +21,7 @@ function EditForm() {
      console.log(single_data);
 
     const [formData,setFormData] = useState({
-
+      id :single_data.state.id,
     url :single_data.state.url,
     title: single_data.state.title,
     price: single_data.state.price,
@@ -31,38 +31,25 @@ function EditForm() {
  }) 
 
 
-//  useEffect(()=>{
-//         dispatch(fetchAllData())
-
-//         console.log(dataList)
-
-//         const selectData = dataList.data.find((item)=> item.id ==  id)
-//          formData.title = selectData.title
-//          formData.price = selectData.price
-//          formData.url = selectData.url
-
-//  },[])
 
 
 
- const handleChange = (e) =>{
+ const handleChange = (e) =>{ 
      const {name,value} = e.target;
-     setFormData({...formData  ,  [name]:value })
-   //   console.log(formData);
-   dispatch(editData(id,formData))
+     setFormData({...formData,[name]:value })
      
  }
  const handleSubmit = (e)=>{
-    e.preventDefault;
+    e.preventDefault();
+   //  dispatch(editData({formData}))
 
-   //  setFormData({...formData})
-   navigate(dispatch(editData({id,formData})))
- }
+   dispatch(editData({formData }));
 
-
- console.log(formData)
+    navigate("/")
     
+ }    
 
+    
   return (
     <>
          <div className="container d-flex justify-content-center mt-5" id='main'>
@@ -98,3 +85,6 @@ function EditForm() {
 
 export default EditForm
    
+// 
+
+// 
