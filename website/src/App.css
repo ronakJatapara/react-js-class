@@ -1,0 +1,30 @@
+/* Ensure the description container does not clip content */
+#Description {
+    overflow: visible !important;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Fix accordion stacking */
+  #acc {
+    position: relative;
+    z-index: 10; /* Ensures it appears above other content */
+  }
+  
+  /* Allow the accordion content to expand fully */
+  .MuiAccordion-root {
+    overflow: visible !important;
+  }
+  
+  /* Ensure the accordion details are not hidden */
+  .MuiAccordionDetails-root {
+    height: auto !important;
+    overflow: visible !important;
+  }
+  
+  /* Fix overlapping issue when accordion expands */
+  .MuiAccordion-root.Mui-expanded {
+    z-index: 20; /* Ensures expanded section appears on top */
+    position: relative;
+  }
+  

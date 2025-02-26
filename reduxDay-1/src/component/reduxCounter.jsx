@@ -1,20 +1,40 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+  import React from 'react'
+  import { useDispatch, useSelector } from 'react-redux'
+  import { decrement, handleDelete, increment } from '../feature/slice'
 
- export default function ReduxCounter() {
+  export default function ReduxCounter() {
 
-    const count = useSelector((state)=> state.counterReducer.count)
-
-
-
-  return (
-    <div>
-      <h1>redux-Counter</h1>
-      <h3>{count.count}</h3>
+      const {count,name} = useSelector((state)=> state.counterReducer)
+      const dispatch = useDispatch()
 
 
-    </div>
-  )
-}
 
-// export default ReduxCounter
+    return (
+      <div>
+        <h1>redux-Counter</h1>
+        <h3>{count}</h3>
+        
+          
+          
+            <font>{name}</font> 
+            { name? <button className='' style={{marginLeft:"10px"}} onClick={() => dispatch(handleDelete())}>delete-name</button>: <p>no use</p>}
+      
+      
+
+
+        <br /><br />
+        
+        <button onClick={()=>dispatch(increment())}>+</button>
+        <button onClick={()=>dispatch(decrement())}>-</button>
+
+
+
+
+
+
+
+      </div>
+    )
+  }
+
+  // export default ReduxCounter

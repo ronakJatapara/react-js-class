@@ -42,7 +42,7 @@ function ReduxCrud() {
 
       setName(singleData.name)
       setSub(singleData.sub)
-      SetEditIndex(id)
+      SetEditIndex(id) 
 
       
     }

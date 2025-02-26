@@ -20,17 +20,31 @@ function App() {
   setArr(data)
  },[])
 
+
+ const [editIndex , setEditIndex] = useState(null)
+
+
   const handleSubmit = ()=>{
      
+
+    if(editIndex == null)
+    {
+      let obj={id:Date.now() , name,city,sub}
+      setArr([...arr,obj])
+      localStorage.setItem("student" , JSON.stringify([...arr,obj]))  
+    }
+    else{
+      let singleData = arr.find((item)=>item.id == editIndex)
+      
+      singleData.id = editIndex;
+      singleData.name = name;
+      singleData.city=city;
+      singleData.sub=sub;
+      localStorage.setItem("student" , JSON.stringify(arr))
+
+    }
            
-    let obj={id:Date.now() , name,city,sub}
-
-    setArr([...arr,obj])
-    // console.log(obj);
-
-
-    localStorage.setItem("student" , JSON.stringify([...arr,obj]))
-
+    
 
     setName("")
     setCity("")
@@ -47,7 +61,6 @@ function App() {
    
   }
 
-  const [editIndex , setEditIndex] = useState(null)
 
   const handleEdit=(id)=>{
     let EditData = arr.find((item)=>item.id==id)
@@ -69,7 +82,7 @@ function App() {
    <input type="text" name="" id="" placeholder='enter subject' value={sub} onChange={(e)=>{setSub(e.target.value)}} />
    <br /><br />
 
-   <button onClick={handleSubmit}>{editIndex == null ? "submit" : "update"}</button>
+   <button onClick={handleSubmit}>{editIndex === null ? "submit" : "update"}</button>
 
 
    <table border='1' width="800">
@@ -78,7 +91,7 @@ function App() {
   <tr>
 
     <th>id</th>
-    <th>name</th>
+    <th>name</th> 
     <th>city</th>
     <th>sub</th>
     <th colSpan={2}>action</th>

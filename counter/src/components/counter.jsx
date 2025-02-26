@@ -25,6 +25,8 @@ function Counter()
    <button onClick={minus}>-</button>
    <h2>{State}</h2>
    <Counter2   ronak={State}/>
+   <Counter2   ronak={State}/>
+
    {/* // <Counter2 ronak={State} /> */}
 
    <button onClick={plus}>+</button>

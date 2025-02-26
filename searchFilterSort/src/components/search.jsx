@@ -127,11 +127,13 @@ function Search() {
       }
     }];
 
-  // const [show,setShow] = useState(data)
 
 
 
   // let search =  data.filter((item)=>item.title.toLowerCase().includes(term.toLowerCase()))
+
+
+
   const [searchData,setSearchData] = useState(data)
   const[sort,setSort] = useState("asc")
   const[fil,setFil] = useState("all")
@@ -145,11 +147,9 @@ function Search() {
     let sortData = search.sort((a,b)=> 
        sort == "asc" ? a.price - b.price : b.price - a.price
     )
-    // setSort(sortData)
 
-    // let filterData = fil === "all" ? sortData: sortData.filter((item)=>item.category == fil)
 
-    // setSearchData([...sortData , ...filterData])
+    setSearchData([...sortData])
 
 
   }

@@ -39,7 +39,7 @@ function Home() {
                 {AddState.data &&
                     AddState.data.map((el, ind) => {
                         return (
-                            <div className="col-md-3 col-sm-6 mb-4" key={ind}>
+                            <div className="col-lg-3 col-md-6 col-sm-6 mb-4" key={ind}>
                                 <div className="card" style={{height:"500px"}}>
                                     <div className="img d-flex justify-content-center align-items-center">
                                     <img src={el.url} className="card-img-top" alt="Product" style={{height:"100%" , width:"80%"}} />

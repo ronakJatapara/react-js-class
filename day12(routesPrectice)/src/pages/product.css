@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .row{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -27,3 +27,5 @@
     transition: .5s;
 
 }
+
+

@@ -14,6 +14,7 @@ import Nav from './navbar';
 import "./product.css"
 import { v4 } from 'uuid';
 import { Navigate, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
  function Product() {
@@ -42,6 +43,8 @@ import { Navigate, useNavigate } from 'react-router-dom';
 useEffect(() => {
     localStorage.setItem("data", JSON.stringify(state));
 
+  
+
     
 
    if(state.length <1)
@@ -64,23 +67,34 @@ useEffect(() => {
    {
     state.map((el,ind)=>{
      return <>
-      <Card sx={{ maxWidth: 340 , marginTop:'30px' }}>
+    <div className="col-3">
+    <Card sx={{ marginTop:'30px' }}>
    
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-        <img src={el.img} alt="" />
-          <p>{el.title}</p>
-        </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small" id='btn2' type='button' value={el} onClick={()=>{handleDelete(el.id,ind)}}>Delete</Button>
-        <Button size="small" id='btn3' type='button' >Edit</Button>
-      </CardActions>
-    </Card>
+   <CardContent>
+     <Typography id='main' className='d-flex flex-column justify-center align-items-center ' gutterBottom variant="h5" component="div">
+     <div id="img1" className='' style={{backgroundImage:`url(${el.img})`,
+     backgroundPosition:"center",
+     backgroundRepeat:"no-repeat",
+     backgroundSize:"cover",
+     width: '200px', // Set your desired width
+ height: '150px'
+   }}>
+    
+     </div>
+       <p className='pt-4'>{el.title}</p>
+     </Typography>
+     <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+       Lizards are a widespread group of squamate reptiles, with over 6,000
+       species, ranging across all continents except Antarctica
+     </Typography>
+   </CardContent>
+   <CardActions>
+     <Button size="small" id='btn2' type='button' value={el} onClick={()=>{handleDelete(el.id,ind)}}>Delete</Button>
+     <Link to={`/edit/${el.id}`}><Button size="small" id='btn3' type='button' >Edit</Button>
+     </Link>
+   </CardActions>
+ </Card>
+    </div>
      </>
     })
    }

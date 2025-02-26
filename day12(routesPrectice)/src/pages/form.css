@@ -5,13 +5,14 @@
 }
 #form{
     width: 500px;
+    height: 400px;
     border: 1px solid black;
 }
 #btn1{
     background-color: rgb(24, 142, 232);
     color: white;
     height: 40px;
-    width: 400px;
+    width: 300px;
     border: none;
     border-radius: 5px;
 }

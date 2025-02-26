@@ -4,7 +4,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Add from '../componetns/Add'
-import Home from '../componetns/home'
+import Home from '../componetns/Home'
 import EditForm from '../componetns/editForm'
 
 function MainRouter() {

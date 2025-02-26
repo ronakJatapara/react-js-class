@@ -1,3 +1,17 @@
+
+
+
+#sidebar{
+
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  position: sticky;
+  top: 0;
+  /* border: 1px solid black; */
+  overflow: visible;
+height: 650px;
+}
 .thumbnail-slider {
     width: 100px;
     height: 600px; 
@@ -27,7 +41,7 @@
   
   .main-slider {
     width: 510px;
-    height: 615px;
+    height: 650px;
     position: absolute;
     right: 10px;
     top: 0;
@@ -36,7 +50,7 @@
   
   .main-img {
     width: 100%;
-    height: 615px;
+    height: 650px;
     object-fit: cover;
     border-radius: 10px;
   }
@@ -157,6 +171,7 @@
     top: 240px;
     font-size: 17px;
     color: #2471A2;
+    font-weight: bold;
   }
 #bagBtn{
   width: 370px;
@@ -195,4 +210,135 @@
   top: 12px;
   font-size: 18px;
   left: 70px;
+}
+#pincode{
+  width: 80%;
+  height: 45px;
+  border: 1px solid #8892A4;
+  border-radius: 5px;
+  color: #8892A4;
+
+}
+#a13{
+  position: absolute;
+  top: 11px;
+  right: 200px;
+  font-size: 16px;
+  color: #257EB6;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+#free{
+  width: 77.5%;
+  height: 45px;
+  background-color: #D1EDFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 13px;
+}
+#freeFont{
+  color: #257EB6;
+  font-weight: bold;
+}
+.fa-truck{
+  color: #257EB6;
+  font-weight: bold;
+}
+#sidebar2{
+  height: 1600px;
+  /* border: 1px solid  black; */
+}
+#a14{
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+}
+#a15{
+  padding-bottom: 10px;
+  color: #919191;
+}
+#a16{
+  position: absolute;
+  top: 20px;
+  padding-top: 10px;
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+#Description{
+  width: 100%;
+  height:100px;
+  /* border: 1px solid black; */
+}
+#a17{
+  font-size: 14px;
+}
+#a18{
+  font-size: 14px;
+}
+#a19{
+  font-size: 14px;
+}
+#a20{
+  font-size: 14px;
+}
+#a21{
+  font-size: 15px;
+}
+#a22{
+  font-size: 15px;
+}
+#acc{
+  width: 80%;
+}
+#a23{
+  color: black;
+  font-weight: bold;
+  
+}
+#a24{
+  color:#919191;
+  font-size: 13px;
+  
+}
+.fa-clipboard{
+  position: absolute;
+  top: 30px;
+  left: 10px;
+}
+.fa-left-right{
+  position: absolute;
+  top: 30px;
+  left: 10px;
+}
+#a25{
+  font-size: 13px;
+}
+#a26{
+  font-weight: bold;
+  font-size: 14px;
+}
+#a27{
+  color: #5e5d5d;
+  font-size: 14px;
+}
+#a28{
+  color: #56ACAC;
+  font-size: 14px;
+}
+#a29{
+  font-size: 14px;
+  color: #3c3d3e;
+  /* padding-left: 5px; */
+}
+#btnn1{
+  width: 100%;
+  height: 50px;
+  border:  1px solid black;
+  background-color: transparent;
+  color: #207BB4;
+  border-radius: 10px;
+  border-color: #207BB4;  
 }

@@ -17,7 +17,7 @@ import Nav from './navbar';
 
     })
 
-    const [Arr,setArr] = useState(JSON.parse(localStorage.getItem("data"))||[])
+    const [arr,setArr] = useState(JSON.parse(localStorage.getItem("data"))||[])
 
     const handleChange = (e) =>{
         const {name,value} = e.target
@@ -26,7 +26,8 @@ import Nav from './navbar';
 
     const handleSubmit = (e) =>{
      e.preventDefault();
-     setArr([...Arr, state])
+     setArr([...arr, state])
+     console.log(arr);
      
      setState({
       img: "",
@@ -36,19 +37,20 @@ import Nav from './navbar';
 
      })
 
+     console.log(arr);
     }
 
     
     
 
     useEffect(()=>{
-     localStorage.setItem("data",JSON.stringify(Arr))
+    //  localStorage.setItem("data",JSON.stringify(Arr))
+    localStorage.setItem("data",JSON.stringify(arr))
 
-    },[Arr])
+    },[arr])
 
 
     
-    console.log(Arr);
 
     
     

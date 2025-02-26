@@ -53,6 +53,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+
+   const handleChange = () =>{
+
+     
+
+   }
+
+
+
 export default function Navbar() {
   return (
     <Box  sx={{ flexGrow: 1 }}>
@@ -75,7 +84,7 @@ export default function Navbar() {
           >
             MUI
           </Typography>
-          <Search style={{marginRight:"100px"}}>
+          <Search style={{marginRight:"100px"}} onChange={handleChange}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>

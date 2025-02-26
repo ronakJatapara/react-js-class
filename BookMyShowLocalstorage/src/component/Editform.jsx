@@ -39,7 +39,8 @@ function Editform() {
       const handleSubmit = (e) => {
     e.preventDefault();
 
-    const updatedData = edit.filter((item) =>item.id == id ? { ...item, ...formData } : item);
+    const updatedData = edit.map((item) => item.id == id ? { ...item, ...formData } : item);
+
     
     localStorage.setItem("data", JSON.stringify(updatedData));
     setEdit(updatedData);
