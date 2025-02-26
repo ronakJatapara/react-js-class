@@ -10,6 +10,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import "./navbar.css"
 import { Link } from 'react-router-dom';
+import { useState , useEffect} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -54,15 +56,34 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 
-   const handleChange = () =>{
+ 
+  
 
-     
 
-   }
 
 
 
 export default function Navbar() {
+
+  const dispatch = useDispatch() 
+  const [searchTerm, setSearchTerm] = useState('');
+  const data = useSelector((state) => state.crudSlice) || [];
+
+  const handleChange = (e) =>{
+  
+    const value = e.target.value 
+    setSearchTerm(value)
+    dispatch(setSearchTerm(value))
+  }
+
+  
+
+
+
+
+
+
+
   return (
     <Box  sx={{ flexGrow: 1 }}>
       <AppBar position="static" id="box">
@@ -84,15 +105,17 @@ export default function Navbar() {
           >
             MUI
           </Typography>
-          <Search style={{marginRight:"100px"}} onChange={handleChange}>
+          <Search style={{marginRight:"100px"}} >
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
+              inputProps={{ 'aria-label': 'search' } } onChange={handleChange}
+              value={searchTerm}
             />
           </Search>
+
 
 
 

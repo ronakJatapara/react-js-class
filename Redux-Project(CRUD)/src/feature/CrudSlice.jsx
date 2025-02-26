@@ -29,8 +29,12 @@
 
     export const CrudSlice = createSlice({
         name : "crudSlice",
-        initialState:{data: [], loading : true},
-        reducers:{},
+        initialState:{data: [], loading : true , searchTerm:""},
+        reducers:{
+           setSearchTerm :(state,action)=>{
+             state.searchTerm =  action.payload
+           }
+        },
         extraReducers:(builder)=>{
             builder.addCase(fetchData.pending,(state,action)=>{
                 state.loading = true
@@ -61,6 +65,9 @@
         }
     })
 
+
+
+    export const {setSearchTerm} = CrudSlice.actions
     export default CrudSlice.reducer
 
 
