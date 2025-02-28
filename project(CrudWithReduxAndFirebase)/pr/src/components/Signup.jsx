@@ -9,6 +9,7 @@ import { auth } from '../../firebaseConfig';
 import { Link, useNavigate } from 'react-router-dom';
 import toast ,{Toaster} from 'react-hot-toast';
 import { doc, setDoc } from 'firebase/firestore';
+import { db } from '../../firebaseConfig';
 
 
  function Signup() {
@@ -17,24 +18,45 @@ import { doc, setDoc } from 'firebase/firestore';
     const [email,setEmail] = useState("")
     const [pass,setPass] = useState("")
    const navigate = useNavigate()
-   const handleSignup = async() =>{
-    try{
-        await createUserWithEmailAndPassword(auth,email,pass).then((res)=>{
-            toast.success('Register Successfully')
-            setDoc(doc(db,"Users",res.user.uid),{name,email})
-            setTimeout(()=>{
-                navigate("/")
-            },1500)
+//    const handleSignup = async() =>{
+//     try{
+
+//        let res =  await createUserWithEmailAndPassword(auth,email,pass)
+//         await setDoc(doc(db,"Users",res.user.uid),{name,email})
+
+//             toast.success('Register Successfully')
+
+//             setTimeout(()=>{
+//                 navigate("/")
+//             },1500)
             
             
-        })
-    }
-    catch(error)
-    {
-        toast.error("Email Already register")
-    }
       
-   }
+//     }
+//     catch(error)
+//     {
+//         toast.error("Email Already register")
+//     }
+      
+//    }
+
+const handleSignup = async () => {
+    try {
+       await createUserWithEmailAndPassword(auth, email, pass).then((res)=>{
+        setDoc(doc(db, "Users", res.user.uid), { name, email });
+
+        toast.success('Register Successfully');
+
+        setTimeout(() => {
+            navigate("/");
+        }, 1500);
+       })
+     
+    }
+    catch (error) {
+        toast.error(error.message); // Shows actual error message from Firebase
+    }
+};
 
   return (
  <>
