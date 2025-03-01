@@ -17,11 +17,13 @@ import { doc, getDoc } from 'firebase/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../firebaseConfig';
 import { db } from '../../firebaseConfig';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-function ResponsiveAppBar() {
+function Navbar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
@@ -41,7 +43,7 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
-
+const naviagte = useNavigate()
 const [uid,setUid] = useState(null)
 const [record,setrecord] = useState("")
 
@@ -137,8 +139,11 @@ const fetchUser = async()=>{
             ))}
           </Box>
 
+<Link to="/add">
+<button className='bg-white text-black rounded text-sm px-2 py-2 mr-10'  >Add your Movie</button>
+</Link>
           {/* User Settings */}
-          <Box sx={{ flexGrow: 0 }} className="mt-2">
+          <Box sx={{ flexGrow: 0 }} className="">
             <Tooltip title="Open settings" className='border'>
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="User" src="/assets/avatar.jpg" />
@@ -171,4 +176,4 @@ const fetchUser = async()=>{
   );
 }
 
-export default ResponsiveAppBar;
+export default Navbar;
