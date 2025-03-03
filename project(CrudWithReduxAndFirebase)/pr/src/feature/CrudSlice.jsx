@@ -4,7 +4,7 @@ import axios from "axios";
 export const fetchdata = createAsyncThunk("fetchData",async(obj)=>{
     
     let res = await axios.post(`http://localhost:3000/details`,obj)
-    return res.data
+    return res. data
 })
 
 export const fetchAllData = createAsyncThunk("fetchAllData",async()=>{
@@ -13,7 +13,10 @@ export const fetchAllData = createAsyncThunk("fetchAllData",async()=>{
     
     return res.data
 })
-
+export const deleteData =  createAsyncThunk("deleteData",async(id)=>{
+    let res = await axios.delete(`http://localhost:3000/details/${id}`)
+    return id
+})
 
 export const CrudSlice = createSlice({
     name : "CrudSlice",
@@ -29,6 +32,11 @@ export const CrudSlice = createSlice({
         builder.addCase(fetchAllData.fulfilled,(state,action)=>{
             state.loading = false
             state.data = action.payload
+
+        })
+        builder.addCase(deleteData.fulfilled,(state,action)=>{
+            state.loading = false
+            state.data = state.data.filter((item)=> item.id !== action.payload )
 
         })
     }
