@@ -25,7 +25,7 @@ const handleEdit=(id)=>{
       <br />
       <br />
       <br />
-      <div className="container">
+      <div className="container-fluid" id="container">
         {datas ? (
           <div className="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2" id="form">
             {datas.map((el, ind) => (

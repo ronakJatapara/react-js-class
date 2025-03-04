@@ -8,6 +8,8 @@ import {  signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebaseConfig';
 import { Link, replace, useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
+import "../css/Signup.css"
+
 
 
  function Signin() {
@@ -38,7 +40,8 @@ import toast, { Toaster } from 'react-hot-toast';
   return (
  <>
  <Toaster></Toaster>
-    <div className="form">
+  <div className="mainBox d-flex justify-content-center align-items-center">
+  <div className="form">
         <br /><br />
     <Box
       component="form"
@@ -55,12 +58,13 @@ import toast, { Toaster } from 'react-hot-toast';
 
     </Box>
    <div className="btn d-flex justify-content-center align-items-center">
-   <button id='btn1' className='btn btn-success' onClick={handleSignin}>Login</button>
+   <button id='btn10' className='btn btn-success' onClick={handleSignin}>Login</button>
    
    </div>
  <Link to="/Signup">  <span >Create anAcoount ?</span></Link>
 
     </div>
+  </div>
  </>
   );
 }

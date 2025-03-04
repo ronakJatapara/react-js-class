@@ -18,27 +18,7 @@ import { db } from '../../firebaseConfig';
     const [email,setEmail] = useState("")
     const [pass,setPass] = useState("")
    const navigate = useNavigate()
-//    const handleSignup = async() =>{
-//     try{
 
-//        let res =  await createUserWithEmailAndPassword(auth,email,pass)
-//         await setDoc(doc(db,"Users",res.user.uid),{name,email})
-
-//             toast.success('Register Successfully')
-
-//             setTimeout(()=>{
-//                 navigate("/")
-//             },1500)
-            
-            
-      
-//     }
-//     catch(error)
-//     {
-//         toast.error("Email Already register")
-//     }
-      
-//    }
 
 const handleSignup = async () => {
     try {
@@ -54,7 +34,7 @@ const handleSignup = async () => {
      
     }
     catch (error) {
-        toast.error(error.message); // Shows actual error message from Firebase
+        toast.error(error.message); 
     }
 };
 
@@ -62,9 +42,9 @@ const handleSignup = async () => {
  <>
         <Toaster></Toaster>
 <br />
-    <div className="form">
-        <br />
-        <br />
+<div className="mainBox d-flex justify-content-center align-items-center">
+<div className="form">
+       
     <Box
       component="form"
       sx={{ '& > :not(style)': { m: 1, width: '40ch' } }}
@@ -76,12 +56,14 @@ const handleSignup = async () => {
       <TextField id="outlined-basic" label=" Your Email" variant="outlined" onChange={(e)=>setEmail(e.target.value)} />
       <br /><br />
       <TextField id="outlined-basic" label=" Your Password" variant="outlined" onChange={(e)=> setPass(e.target.value)} />
-      <br /><br /><br />
+      <br /><br />
+      <TextField type='date' id="outlined-basic" label=" " variant="outlined" onChange={(e)=> setPass(e.target.value)} />
+      <br /><br />
 
 
     </Box>
    <div className="btn d-flex justify-content-center align-items-center">
-   <button id='btn1' className='btn btn-success' onClick={handleSignup}>Submit</button>
+   <button id='btn10' className='btn btn-success' onClick={handleSignup}>Submit</button>
    
    </div>
    
@@ -90,6 +72,7 @@ const handleSignup = async () => {
    
    </Link>
     </div>
+</div>
  </>
   );
 }
