@@ -12,7 +12,7 @@ function Signup() {
 
   const handleSignup = async () =>{
       await createUserWithEmailAndPassword(auth,email,pass).then((res)=>{
-        setDoc(doc(db,"Users",res.user.uid),{name,email})
+        setDoc(doc(db,"Users",res.user.uid),{name,email,pass })
         navigate("/dashboard")
   
       })

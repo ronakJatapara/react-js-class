@@ -23,6 +23,8 @@ import { Link } from 'react-router-dom';
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
+
+
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -103,7 +105,6 @@ const fetchUser = async()=>{
               aria-label="menu"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleOpenNavMenu}
               color="inherit"
             >
               <MenuIcon />
@@ -137,7 +138,9 @@ const fetchUser = async()=>{
                 {page}
               </Button>
             ))}
-          </Box>
+          </Box> 
+
+ <Link className='pr-5' to={"/signin"}><font id="login">Login</font></Link>          
 
 <Link to="/add">
 <button className='bg-white text-black rounded text-sm px-2 py-2 mr-10'  >Add your Movie</button>
@@ -145,7 +148,10 @@ const fetchUser = async()=>{
           {/* User Settings */}
           <Box sx={{ flexGrow: 0 }} className="">
             <Tooltip title="Open settings" className='border'>
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <IconButton
+              onClick={()=> naviagte("/profileForm")}
+              
+              sx={{ p: 0 }}>
                 <Avatar alt="User" src="/assets/avatar.jpg" />
               </IconButton>
               

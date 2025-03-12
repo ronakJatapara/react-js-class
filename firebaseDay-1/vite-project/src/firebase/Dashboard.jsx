@@ -37,6 +37,8 @@ function Dashboard() {
   return (
     <>
       <h1>welcome {record.name}</h1>
+      {/* <h1> {record.name}</h1> */}
+
     
     </>
   )
