@@ -19,3 +19,15 @@ body{
   z-index: -10; /* Equivalent to Tailwind's -z-10 */
 }
 
+input, 
+textarea {
+  background-color: #374151; /* Equivalent to bg-gray-700 */
+  outline: none;
+  border-radius: 0.5rem; /* Equivalent to rounded-lg */
+  padding: 0.75rem; /* Equivalent to p-3 */
+}
+
+::placeholder {
+  font-size: 1.125rem; /* Equivalent to text-lg */
+}
+
