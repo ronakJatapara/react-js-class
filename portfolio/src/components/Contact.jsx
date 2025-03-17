@@ -26,7 +26,7 @@ function Contact() {
 
                 </form>
                 <div className='flex flex-col gap-7'>
-               
+                 
 {
   contact_info.map((contact, i) => (
     <div key={i} className="flex flex-wrap gap-4 w-fit items-center">
