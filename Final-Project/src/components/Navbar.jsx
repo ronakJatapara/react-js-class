@@ -25,7 +25,7 @@ export default function Navbar()  {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             News
           </Typography>
-          <Link to="/postform"><Button color="inherit" className='font-dark'>Form</Button></Link>
+          <Link to="/postform"><Button color="" className='text-dark'>Form</Button></Link>
         </Toolbar>
       </AppBar>
     </Box>
