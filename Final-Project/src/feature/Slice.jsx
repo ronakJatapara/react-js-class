@@ -20,10 +20,13 @@ export const fetchAllData =  createAsyncThunk("fetchAllData", async()=>{
 })
 
 
-export const editData = createAsyncThunk("editData" , async(data)=>{
+export const editData = createAsyncThunk("editData" , async(id)=>{
+  console.log(id)
 let res = await axios.put(`http://localhost:3000/product/${data.data}`)
  
 })
+
+
 
 
 
@@ -57,6 +60,7 @@ const Crudslice = createSlice({
         state.data = state.data.filter((item) => item.id !== action.payload);
 
       });
+   
   },
 });
 
