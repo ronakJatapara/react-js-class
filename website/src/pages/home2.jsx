@@ -311,7 +311,7 @@ function Slider() {
 {/* Women category ............................................... */}
 <p className="text-center fs-4 pt-3">Shop by Category- Women</p>
 <div className="container-fluid">
-<div className="row row2" onClick={handleWomenProduct}>
+<div className="row row2" >
   <div className="col-sm-12 col-md-6 col-lg-3 images2" style={{backgroundImage:`URL("https://images.bewakoof.com/uploads/grid/app/444x666-Trending-Category-Icon-OS-T-Shirts-women-1735907920.jpg")`,
     backgroundPosition:"center",
     backgroundRepeat:"no-repeat",

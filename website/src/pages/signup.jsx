@@ -28,7 +28,7 @@
     const[Arr,setArr] =useState([])
     const[showOtp,setShowotp] = useState(false)
     const[otp,setOtp] = useState("")    // otp store karava mate
-    const[otpValue,setOtpvalue] = useState(["","","",""]) // wrong otp mate
+    const[otpValue,setOtpvalue] = useState(["","","",""]) 
 
     const navigate = useNavigate()
 
@@ -55,7 +55,7 @@
     }
     else{
       axios.post(`http://localhost:3000/users`,state)
-      .then((res)=>{
+      .then((res)=>{   
         alert("done")
         navigate("/")
         localStorage.setItem("done",true)
@@ -193,7 +193,6 @@
 
           />
         </InputGroup>
-        {/* {nameErr && <p style={{color:"red", paddingLeft:"130px"}}>{nameErr}</p>} */}
 
         <br />
 

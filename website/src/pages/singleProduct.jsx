@@ -12,6 +12,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import { Link } from "react-router-dom";
 
 function SingleProduct() {
   const { id } = useParams();
@@ -41,7 +42,7 @@ function SingleProduct() {
     state.img6,
     state.img7,
     state.img8,
-  ].filter((img) => img); // Filter out undefined images
+  ].filter((img) => img); 
 
   const mainSliderSettings = {
     infinite: true,
@@ -59,9 +60,9 @@ function SingleProduct() {
     asNavFor: nav1,
     ref: (slider) => setNav2(slider),
     focusOnSelect: true,
-    vertical: true, // Enables vertical thumbnails
-    verticalSwiping: true, // Enables vertical swipe
-    arrows: false, // Hide arrows for better UI
+    vertical: true, 
+    verticalSwiping: true, 
+    arrows: false, 
   };
 
   return (
@@ -175,8 +176,8 @@ function SingleProduct() {
               <div id="mainBtns" className="d-flex  mt-5">
                 <button id="bagBtn" className="d-flex justify-content-center align-items-center position-relative">
                   <i class="fa-solid fa-briefcase"></i>
-                  <p id="a11">ADD TO BAG</p>
-
+                <Link to="/">  <p id="a11">ADD TO BAG</p>
+                </Link>
                 </button>
                 <div id="wishBtn" className="position-relative  ms-3">
 
@@ -485,11 +486,7 @@ function SingleProduct() {
 
 <br /><br /><br /><br />
 
-          <div className="row">
-            <div className="col-12">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat corrupti tempore, ipsum nihil adipisci praesentium cum eaque? Rem, rerum incidunt harum nihil deleniti possimus pariatur ratione adipisci quae, itaque recusandae.
-            </div>
-          </div>
+       
         </div>
 
 
