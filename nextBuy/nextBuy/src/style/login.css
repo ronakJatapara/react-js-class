@@ -54,6 +54,81 @@
     background-color: #222222;
     transform: scale(1.05);
 }
+.img{
+    height: 70px;
+    width: 70%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    transition: .4s;
+
+}
+.img:hover{
+    background-color: rgb(249, 247, 247);
+    box-shadow: 1px 0px 3px rgb(162, 159, 159);
+
+}
+.img img{
+    height: 70%;
+    /* width: 50%; */
+}
+#btn3{
+    width: 150px;
+    height: 45px;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    transition: 0.3s;
+    background-color: #161616;
+}
+#btn3:hover {
+    background-color: #222222;
+    transform: scale(1.05);
+}
+#btn4{
+    width: 45px;
+    height: 45px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: #E9E9E9;
+    transition: .3s;
+}
+#btn4:hover{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    color: white;
+}
+#btn5{
+    width: 45px;
+    height: 45px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: #E9E9E9;
+    transition: .3s;
+}
+#btn5:hover{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    color: white;
+}
+#main{
+    position: fixed;
+    right: -169px;
+    bottom: 20px;
+    overflow: hidden;
+    transition: .5s;
+    z-index: 0;
+}
+#main:hover{
+    right: -10px;
+}
+footer{
+    height: 200px;
+    width: 100%;
+    background-color: black;
+
+}
 
 /* 📱 max-width: 968px */
 @media (max-width: 968px) {
