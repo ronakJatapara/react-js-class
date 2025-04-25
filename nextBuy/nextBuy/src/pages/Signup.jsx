@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../components/navbar'
 import Navbar2 from '../components/navbar2'
 import "../style/signup.css"
@@ -6,6 +6,29 @@ import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 
 function Login() {
+
+
+   const[fname,setFname] = useState("")
+   const[lname,setLname]=useState("")
+   const[email,setEmail]=useState("")
+   const[pass,setPass]=useState("")
+   const [arr,setArr]=useState([])
+
+
+   const handleSubmit =(e)=>{
+
+       e.preventDefault();
+
+       let obj = {id:Date.now(),fname,lname,email,pass}
+
+       setArr([...arr,obj])
+       
+       
+ 
+      }
+      
+      console.log(arr);
+
   return (
     <>
         <Navbar></Navbar>
@@ -25,15 +48,15 @@ function Login() {
         <br /><br />
      <div className="grid grid-cols-12">
       <div className="col-span-12">
-        <form action="" className='flex justify-center items-center  flex-col gap-4'>
+        <form action="" className='flex justify-center items-center  flex-col gap-4' onSubmit={handleSubmit}>
           <h1 className='text-2xl text-bold'>Register</h1>
-          <input type="text" placeholder='First Name' name="" id="" className='border border-gray-200 rounded-lg ' style={{width:"30%",height:"50px",paddingLeft:"10px"}} />
+          <input type="text" placeholder='First Name' name=""  id="" className='border border-gray-200 rounded-lg ' value={fname} style={{width:"30%",height:"50px",paddingLeft:"10px"}} onChange={(e)=> setFname(e.target.value)}/>
           
-          <input type="text" placeholder='Last Name' name="" id="" className='border border-gray-200 rounded-lg ' style={{width:"30%",height:"50px",paddingLeft:"10px"}}/>
+          <input type="text" placeholder='Last Name' name="" id="" className='border border-gray-200 rounded-lg ' value={lname}  style={{width:"30%",height:"50px",paddingLeft:"10px"}} onChange={(e)=> setLname(e.target.value)}/>
 
-          <input type="text" placeholder='Email' name="" id="" className='border border-gray-200 rounded-lg ' style={{width:"30%",height:"50px",paddingLeft:"10px"}} />
+          <input type="text" placeholder='Email' name="" id="" className='border border-gray-200 rounded-lg ' value={email}  style={{width:"30%",height:"50px",paddingLeft:"10px"}} onChange={(e)=> setEmail(e.target.value)} />
           
-          <input type="text" placeholder='Password' name="" id="" className='border border-gray-200 rounded-lg ' style={{width:"30%",height:"50px",paddingLeft:"10px"}}/>
+          <input type="text" placeholder='Password' name="" id="" className='border border-gray-200 rounded-lg 'value={pass}  style={{width:"30%",height:"50px",paddingLeft:"10px"}} onChange={(e)=> setPass(e.target.value)}/>
 
 
           <p>
@@ -42,7 +65,7 @@ function Login() {
           </p>
 
 
-          <button type='button' id='btn6' className='rounded-lg cursor-pointer'>register</button>
+          <button type='submit' id='btn6' className='rounded-lg cursor-pointer'>register</button>
           <Link to={"/login"} id='btn7' className='rounded-lg text-center flex justify-center items-center cursor-pointer'><button type='button' >login</button></Link>
 
         </form>
