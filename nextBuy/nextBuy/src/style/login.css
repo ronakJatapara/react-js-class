@@ -45,14 +45,36 @@
     background-color: #222222;
     transform: scale(1.05);
 }
+#btn11{
+    width: 110px;
+    height: 45px;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    transition: 0.3s;
+    margin-left: 10px;
+}
+#btn11 {
+    background-color: #ffffff;
+    color: black;
+}
+
+#btn11:hover {
+    background-color: #222222;
+    transform: scale(1.05);
+    color: white;
+}
 
 #btn2 {
-    background-color: #161616;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+
 }
 
 #btn2:hover {
-    background-color: #222222;
+    background-color: #212121;
     transform: scale(1.05);
+    color: rgb(255, 255, 255);
 }
 .img{
     height: 70px;
@@ -124,7 +146,7 @@
     right: -10px;
 }
 footer{
-    height: 200px;
+    height: 170px;
     width: 100%;
     background-color: black;
 

@@ -3,6 +3,7 @@ import Navbar from '../components/navbar'
 import Navbar2 from '../components/navbar2'
 import "../style/login.css"
 import { Link } from 'react-router-dom'
+import Footer from '../components/Footer'
 
 function Login() {
   return (
@@ -29,7 +30,7 @@ function Login() {
               <br /><br />
               <input type="text" placeholder='password' className='border border-black' name="" id="inp2" />
               <br /><br />
-              <h2 className='underline'>Forgot your password?</h2>
+             <Link to={"/forgotpass"}> <h2 className='underline'>Forgot your password?</h2></Link>
               <br /><br />
 
               <button type="button" id='btn1' className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Sign In</button>
@@ -114,26 +115,7 @@ function Login() {
 
               </div>
         </div>
-        <footer className='grid grid-cols-12'>
-            <div className="col-span-2 border border-white flex justify-center items-center">
-<p style={{color:"white",paddingTop:"60px"}}> 
-© VISHAL GROUP 2025
-
-</p>
-            </div>
-            <div className="col-span-10 text-white flex justify-center items-center" style={{fontSize:"12px"}}>
-            <Link>About Us   </Link>    <font style={{paddingLeft:"10px",paddingRight:"10px"}}>|</font>
-
-    <Link>Website Privacy Policy</Link><font style={{paddingLeft:"10px",paddingRight:"10px"}}>|</font>
-    <Link>Payment Policy</Link><font style={{paddingLeft:"10px",paddingRight:"10px"}}>|</font>
-    <Link>NextBuy App Private Policy</Link><font style={{paddingLeft:"10px",paddingRight:"10px"}}>|</font>
-    <Link>Return & Refund Policy</Link><font style={{paddingLeft:"10px",paddingRight:"10px"}}>|</font>
-    <Link>Shipping Policy</Link><font style={{paddingLeft:"10px",paddingRight:"10px"}}>|</font>
-    <Link>Term of Service</Link><font style={{paddingLeft:"10px",paddingRight:"10px"}}>|</font>
-    <Link>Contact Us</Link><font style={{paddingLeft:"10px",paddingRight:"10px"}}>|</font>
-    <Link>Request Data Deletion</Link><font style={{paddingLeft:"10px",paddingRight:"10px"}}>|</font>
-            </div>
-        </footer>
+     <Footer></Footer>
 
            <div className="extra grid grid-cols-12 border border-black  rounded-lg relative" id='main' style={{width:"220px",height:"60px" , }}>
             <div className="col-span-3 flex justify-center items-center bg-white " id='pOne'>

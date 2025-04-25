@@ -18,11 +18,11 @@ export default function Navbar2() {
         <Toolbar>
          
           <Typography variant="h6" className="flex justify-center gap-10 text-sm" component="div" sx={{ flexGrow: 1 }}>
-           <Link className='' style={{fontSize:"15px"}}>HOME</Link>
-           <Link className='' style={{fontSize:"15px"}}>BESTSELLER</Link>
-           <Link className='' style={{fontSize:"15px"}}>MEN</Link>
-           <Link className='' style={{fontSize:"15px"}}>WOMEN</Link>
-           <Link className='' style={{fontSize:"15px"}}>BLOGS</Link>
+           <Link className='' to={"/"} style={{fontSize:"15px"}}>HOME</Link>
+           <Link className=''  style={{fontSize:"15px"}}>BESTSELLER</Link>
+           <Link className=''  style={{fontSize:"15px"}}>MEN</Link>
+           <Link className=''  style={{fontSize:"15px"}}>WOMEN</Link>
+           <Link className=''  style={{fontSize:"15px"}}>BLOGS</Link>
 
 
           </Typography>

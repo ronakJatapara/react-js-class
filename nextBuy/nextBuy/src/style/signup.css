@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#btn6{
+    width: 30%;
+    height: 45px;
+    border: 1px solid black;
+    /* border-radius: 50%; */
+    background-color: black;
+    transition: .3s;
+    color: white;
+}
+#btn6:hover{
+    background-color: black;
+    color: white;
+}
+
+#btn7{
+    width: 30%;
+    height: 45px;
+    border: 1px solid black;
+    /* border-radius: 50%; */
+    background-color: rgb(255, 255, 255);
+    transition: .3s;
+    color: rgb(0, 0, 0);
+}
+#btn7:hover{
+    background-color: rgb(0, 0, 0);
+    color: white;
+}

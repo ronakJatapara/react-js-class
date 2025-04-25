@@ -1,11 +1,11 @@
 import React from 'react'
 import Navbar from '../components/navbar'
 import Navbar2 from '../components/navbar2'
-import "../style/signup.css"
+import "../style/login.css"
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 
-function Login() {
+function ForgotPass() {
   return (
     <>
         <Navbar></Navbar>
@@ -14,45 +14,45 @@ function Login() {
       
       <div className="container">
         <div className="title">
-                 <h1 className='text-4xl text-center'></h1>
+                 <h1 className='text-4xl text-center'>Log in</h1>
                  <br />
     <Link to="/">
-    <h1 className='text-center text-4xl'>Register</h1>
-    <br />
-    <h3 className='text-center'><font className="">Home</font>  <i class="fa-solid fa-chevron-right text-sm"></i>  <font>Create Account</font></h3>
+    <h3 className='text-center'><font className="">Home</font>  <i class="fa-solid fa-chevron-right text-sm"></i>  <font>Account</font></h3>
     </Link>
         </div>
         <br /><br />
-     <div className="grid grid-cols-12">
-      <div className="col-span-12">
-        <form action="" className='flex justify-center items-center  flex-col gap-4'>
-          <h1 className='text-2xl text-bold'>Register</h1>
-          <input type="text" placeholder='First Name' name="" id="" className='border border-gray-200 rounded-lg ' style={{width:"30%",height:"50px",paddingLeft:"10px"}} />
+        <div className="grid grid-cols-12">
+          <div className="col-span-12 md:col-span-6 ">
+           <div className="container">
+            <h1 className='text-3xl ' style={{paddingLeft:"23%"}}>Reset your password</h1>
+            <p className='text-gray-500' style={{paddingLeft:"23%",paddingTop:"10px"}}>We will send you an email to reset your password.</p>
+             <form action="" id='form'>
+              <input type="text" placeholder='Email' className='border border-black' name="" id="inp1" />
+              <br /><br />
           
-          <input type="text" placeholder='Last Name' name="" id="" className='border border-gray-200 rounded-lg ' style={{width:"30%",height:"50px",paddingLeft:"10px"}}/>
 
-          <input type="text" placeholder='Email' name="" id="" className='border border-gray-200 rounded-lg ' style={{width:"30%",height:"50px",paddingLeft:"10px"}} />
-          
-          <input type="text" placeholder='Password' name="" id="" className='border border-gray-200 rounded-lg ' style={{width:"30%",height:"50px",paddingLeft:"10px"}}/>
+              <button type="button" id='btn1' className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Submit</button>
+              <button type="button" id='btn11' className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Cancel</button>
 
 
-          <p>
-          Sign up for early Sale access plus tailored new arrivals, trends and 
-          <br />promotions. To opt out, click unsubscribe in our emails.
-          </p>
+             </form>
+           </div>
+          </div>
+          <div className="col-span-12 md:col-span-6">
+    <h1 className='text-3xl font-bold' style={{fontSize:"25px"}}>New Customer</h1>
+    <br />
+    <p className='pt-10 text-gray-500'>Sign up for early Sale access plus tailored new arrivals, trends and 
+      <br />promotions. To opt out, click unsubscribe in our emails.</p>
+      <br />
+      <Link to={"/Signup"}>
+      <button type="button" id='btn2' className="bg-black text-white rounded-lg">Register</button>
+      </Link>
 
 
-          <button type='button' id='btn6' className='rounded-lg cursor-pointer'>register</button>
-          <Link to={"/login"} id='btn7' className='rounded-lg text-center flex justify-center items-center cursor-pointer'><button type='button' >login</button></Link>
-
-        </form>
-      </div>
-     </div>
-
-<br />
+          </div>
+        </div>
 <br />
 <br /><br />
-
 
 
         <div className="grid grid-cols-12">
@@ -115,8 +115,7 @@ function Login() {
 
               </div>
         </div>
-
-<Footer></Footer>
+     <Footer></Footer>
 
            <div className="extra grid grid-cols-12 border border-black  rounded-lg relative" id='main' style={{width:"220px",height:"60px" , }}>
             <div className="col-span-3 flex justify-center items-center bg-white " id='pOne'>
@@ -136,7 +135,7 @@ function Login() {
   )
 }
 
-export default Login
+export default ForgotPass
 
 
 
