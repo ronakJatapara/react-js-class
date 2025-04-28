@@ -5,7 +5,7 @@ import "../style/signup.css"
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 
-function Login() {
+function Signup() {
 
 
    const[fname,setFname] = useState("")
@@ -14,20 +14,39 @@ function Login() {
    const[pass,setPass]=useState("")
    const [arr,setArr]=useState([])
 
+   const[fnameError,setFnameError] = useState(false)
+   const[lnameError,setLnameError] = useState(false)
+   const[emailError,setEmailError] = useState(false)
+   const[passError,setPassError] = useState(false)
 
-   const handleSubmit =(e)=>{
 
-       e.preventDefault();
 
-       let obj = {id:Date.now(),fname,lname,email,pass}
 
-       setArr([...arr,obj])
-       
-       
- 
-      }
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    fname.length === 0 ? setFnameError(true) : setFnameError(false);
+    lname.length === 0 ? setLnameError(true) : setLnameError(false);
+    email.length === 0 ? setEmailError(true) : setEmailError(false);
+    pass.length === 0 ? setPassError(true) : setPassError(false);
+
+    if (fname.length === 0 || lname.length === 0 || email.length === 0 || pass.length === 0) {
+        return;
+    }
+
+    let obj = { id: Date.now(), fname, lname, email, pass };
+    setArr([...arr, obj]);
+
+    setFname("");
+    setLname("");
+    setEmail("");
+    setPass("");
+};
+
       
-      console.log(arr);
+     
 
   return (
     <>
@@ -50,14 +69,18 @@ function Login() {
       <div className="col-span-12">
         <form action="" className='flex justify-center items-center  flex-col gap-4' onSubmit={handleSubmit}>
           <h1 className='text-2xl text-bold'>Register</h1>
-          <input type="text" placeholder='First Name' name=""  id="" className='border border-gray-200 rounded-lg ' value={fname} style={{width:"30%",height:"50px",paddingLeft:"10px"}} onChange={(e)=> setFname(e.target.value)}/>
-          
-          <input type="text" placeholder='Last Name' name="" id="" className='border border-gray-200 rounded-lg ' value={lname}  style={{width:"30%",height:"50px",paddingLeft:"10px"}} onChange={(e)=> setLname(e.target.value)}/>
+    
+          <input type="text" placeholder='First Name' name=""  id="" className={`border ${fnameError ? "border-red-500" : "border-gray-200"} rounded-lg`} value={fname} style={{width:"30%",height:"50px",paddingLeft:"10px"}} onChange={(e)=> setFname(e.target.value)}/>
+          { fnameError== true ? <p className="text-red-500 text-sm mt-1">Please fill your First Name</p> : false}
+    
+          <input type="text" placeholder='Last Name' name="" id="" className={`border ${lnameError ? "border-red-500" : "border-gray-200"} rounded-lg`} value={lname}  style={{width:"30%",height:"50px",paddingLeft:"10px"}} onChange={(e)=> setLname(e.target.value)}/>
+          { lnameError == true ? <p className='text-red-500 text-sm mt-1'>Please fill your Last name</p> : false}
 
-          <input type="text" placeholder='Email' name="" id="" className='border border-gray-200 rounded-lg ' value={email}  style={{width:"30%",height:"50px",paddingLeft:"10px"}} onChange={(e)=> setEmail(e.target.value)} />
+          <input type="text" placeholder='Email' name="" id="" className={`border ${emailError ? "border-red-500" : "border-gray-200"} rounded-lg`  }value={email}  style={{width:"30%",height:"50px",paddingLeft:"10px"}} onChange={(e)=> setEmail(e.target.value)} />
+          { emailError == true ? <p className='text-red-500 text-sm mt-1'>Please fill your Email</p> : false}
           
-          <input type="text" placeholder='Password' name="" id="" className='border border-gray-200 rounded-lg 'value={pass}  style={{width:"30%",height:"50px",paddingLeft:"10px"}} onChange={(e)=> setPass(e.target.value)}/>
-
+          <input type="text" placeholder='Password' name="" id="" className={`border ${passError ?  "border-red-500" : "border-gray-200"} rounded-lg`}value={pass}  style={{width:"30%",height:"50px",paddingLeft:"10px"}} onChange={(e)=> setPass(e.target.value)}/>
+     {passError == true ? <p className='text-red-500 text-sm mt-1'>Please fill your Password</p>: false}
 
           <p>
           Sign up for early Sale access plus tailored new arrivals, trends and 
@@ -159,7 +182,7 @@ function Login() {
   )
 }
 
-export default Login
+export default Signup
 
 
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../components/navbar'
 import Navbar2 from '../components/navbar2'
 import "../style/login.css"
@@ -6,6 +6,23 @@ import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 
 function Login() {
+  
+  const[loginEmail,setLoginEmail] = useState("")
+  const[loginPass,setLoginPass] = useState("")
+  const[loginEmailError,setLoginEmailError] = useState(false)
+  const[loginPassError,setLoginPassError] = useState(false)
+
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+
+   loginEmail.length === 0 ? setLoginEmailError(true) : setLoginEmailError(false)
+   loginPass.length === 0 ? setLoginPassError(true) : setLoginPassError(false)
+
+
+
+  }
+
+
   return (
     <>
         <Navbar></Navbar>
@@ -25,15 +42,21 @@ function Login() {
           <div className="col-span-12 md:col-span-6 ">
            <div className="container">
             <h1 className='text-3xl ' style={{paddingLeft:"23%"}}>Log in</h1>
-             <form action="" id='form'>
-              <input type="text" placeholder='Email' className='border border-black' name="" id="inp1" />
+             <form action="" id='form' onSubmit={handleSubmit}>
+
+              <input type="text" placeholder='Email' className={`border ${loginEmailError ? "border-red-500" : "border-black"} rounded-lg`} name="" value={loginEmail} id="inp1" onChange={(e)=> setLoginEmail(e.target.value)} />
+              {loginEmailError == true ? <p className='text-red-500 text-sm mt-1'>Please Enter your Email</p> : false }
+
+    
               <br /><br />
-              <input type="text" placeholder='password' className='border border-black' name="" id="inp2" />
+              <input type="text" placeholder='password' className={`border ${loginPassError ? "border-red-500" : "border-black"} rounded-lg`} name="" value={loginPass} id="inp2" onChange={(e)=> setLoginPass(e.target.value)} />
+
+              {loginPassError === true ?<p className='text-red-500 text-sm mt-1'>Please Enter your Password</p>: false }
               <br /><br />
              <Link to={"/forgotpass"}> <h2 className='underline'>Forgot your password?</h2></Link>
               <br /><br />
 
-              <button type="button" id='btn1' className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Sign In</button>
+              <button type="submit" id='btn1' className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Sign In</button>
 
              </form>
            </div>

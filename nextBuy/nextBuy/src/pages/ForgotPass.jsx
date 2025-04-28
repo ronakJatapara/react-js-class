@@ -1,11 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../components/navbar'
 import Navbar2 from '../components/navbar2'
 import "../style/login.css"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Footer from '../components/Footer'
 
 function ForgotPass() {
+
+   const[forgotPass,setForgotPass] = useState("")
+   const[forgotPassError,setForgotPassError] = useState(false)
+   const navigate = useNavigate()
+
+   const handleSubmit = (e)=>{
+     e.preventDefault();
+
+     forgotPass.length === 0 ? setForgotPassError(true) : setForgotPassError(false)
+     if (forgotPass.length > 0) {
+      navigate("/login");  
+    }
+
+   }
+
   return (
     <>
         <Navbar></Navbar>
@@ -26,12 +41,13 @@ function ForgotPass() {
            <div className="container">
             <h1 className='text-3xl ' style={{paddingLeft:"23%"}}>Reset your password</h1>
             <p className='text-gray-500' style={{paddingLeft:"23%",paddingTop:"10px"}}>We will send you an email to reset your password.</p>
-             <form action="" id='form'>
-              <input type="text" placeholder='Email' className='border border-black' name="" id="inp1" />
+             <form action="" id='form' onSubmit={handleSubmit}>
+              <input type="text" placeholder='Email' className={`border ${forgotPassError ? "border-red-500" : "border-black"} rounded-lg`} name="" value={forgotPass} id="inp1" onChange={(e)=> setForgotPass(e.target.value)} />
+              {forgotPassError === true ?  <p className='text-red-500 text-sm mt-1'>Enter Your New Email</p> : false }
               <br /><br />
           
 
-              <button type="button" id='btn1' className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Submit</button>
+              <button type="submit" id='btn1' className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Submit</button>
              <Link to={"/login"}> <button type="button" id='btn11' className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Cancel</button></Link>
 
 
