@@ -10,7 +10,7 @@ import { Link } from "react-router-dom"
 
 export default function Navbar() {
   return (
-    <div className="container mx-auto" style={{ backgroundColor: "white" }}>
+    <div className="container mx-auto" style={{ backgroundColor: "white" }} id='navbar'>
       <div className="grid grid-12">
         <Box sx={{ flexGrow: 1 }}>
           <AppBar position="static" className='custom-appbar flex justify-center' sx={{ backgroundColor: "white" }}>

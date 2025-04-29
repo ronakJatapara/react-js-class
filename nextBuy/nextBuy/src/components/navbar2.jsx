@@ -7,11 +7,12 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
+import "../style/navbar2.css"
 
 export default function Navbar2() {
   return (
    <>
-   <div className="container mx:auto bg-black"  style={{backgroundColor:"black"}}>
+   <div className="container mx:auto bg-black"  style={{backgroundColor:"black"}} id='navbar2'>
     
    <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" className='text-black' style={{backgroundColor:"black"}}>

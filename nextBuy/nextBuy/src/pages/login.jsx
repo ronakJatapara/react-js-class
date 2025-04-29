@@ -4,6 +4,8 @@ import Navbar2 from '../components/navbar2'
 import "../style/login.css"
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
 
 function Login() {
   
@@ -18,6 +20,21 @@ function Login() {
    loginEmail.length === 0 ? setLoginEmailError(true) : setLoginEmailError(false)
    loginPass.length === 0 ? setLoginPassError(true) : setLoginPassError(false)
 
+   if(loginEmail.length == 0 || loginPass == 0)
+   {
+      toast.error("Please fill all required fields!", {
+          position: "top-right",
+          autoClose: 2000,
+        });
+       return;
+   }
+   else{
+    
+      toast.success("Registered Successfully!", {
+        position: "top-right",
+        autoClose: 2000,
+      });
+   }
 
 
   }

@@ -11,3 +11,7 @@
 .custom-appbar {
     height: 115px;  
   }
+  #navbar{
+    position: fixed;
+    top: 0;
+}

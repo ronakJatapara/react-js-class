@@ -26,6 +26,8 @@ function ForgotPass() {
         <Navbar></Navbar>
         <Navbar2></Navbar2>
         <br /><br />
+     <br /><br /><br /><br /><br /><br /><br />      
+
       
       <div className="container">
         <div className="title">
