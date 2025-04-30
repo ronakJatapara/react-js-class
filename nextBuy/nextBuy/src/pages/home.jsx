@@ -11,13 +11,13 @@ function Home() {
 
       {/* <Options></Options> */}
 
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
       <div className="grid grid-cols-12">
-        <div className="col-span-4  " id='fMain'>
+        <div className="col-span-5  " id='fMain'>
           <div className="grid grid-cols-12">
             
-            <div className="col-span-3 flex justify-center items-center flex-col" id='circle1'>
+            <div className="col-span-3 flex justify-center items-center flex-col mainCircle" id='circle1'>
               <div className="circle1 h-23 w-23 rounded-full">
                 <div className="img1 h-23 w-23 rounded-full"></div>
               </div>
@@ -27,7 +27,7 @@ function Home() {
             </div>
 
 
-            <div className="col-span-3 flex justify-center items-center flex-col" id='circle1'>
+            <div className="col-span-3 flex justify-center items-center flex-col mainCircle" id='circle1'>
               <div className="circle2 h-23 w-23 rounded-full">
                 <div className="img2 h-23 w-23 rounded-full"></div>
               </div>
@@ -36,7 +36,7 @@ function Home() {
               </div>
             </div>
 
-            <div className="col-span-3 flex justify-center items-center flex-col" id='circle1'>
+            <div className="col-span-3 flex justify-center items-center flex-col mainCircle" id='circle1'>
               <div className="circle3 h-23 w-23 rounded-full">
                 <div className="img3 h-23 w-23 rounded-full"></div>
               </div>
@@ -45,7 +45,7 @@ function Home() {
               </div>
             </div>
 
-            <div className="col-span-3 flex justify-center items-center flex-col" id='circle1'>
+            <div className="col-span-3 flex justify-center items-center flex-col mainCircle" id='circle1'>
               <div className="circle4 h-23 w-23 rounded-full">
                 <div className="img4 h-23 w-23 rounded-full"></div>
               </div>
@@ -60,28 +60,30 @@ function Home() {
 
            <br /><br /><br />
 
-          <div className="grid grid-cols-12">
+          <div className="grid grid-cols-12 flex justify-evenly gap-3">
             
-            <div className="col-span-3 flex justify-center items-center flex-col" id='circle1'>
+            <div className="col-span-3 flex justify-center items-center flex-col mainCircle" id='circle1'>
               <div className="circle5 h-23 w-23 rounded-full">
                 <div className="img5 h-23 w-23 rounded-full"></div>
 
               </div>
               <div className="text h-8 w-40 flex justify-center items-center">
-                <p className='text-center' style={{ fontSize: "13px" }}> Sharees</p>
+                <p className='text-center' style={{ fontSize: "13px" }}> Women's western's 
+                  clothing
+                </p>
               </div>
             </div>
 
-            <div className="col-span-3 flex justify-center items-center flex-col" id='circle1'>
+            <div className="col-span-3 flex justify-center items-center flex-col mainCircle" id='circle1'>
               <div className="circle6 h-23 w-23 rounded-full">
                 <div className="img6 h-23 w-23 rounded-full"></div>
               </div>
               <div className="text h-8 w-40 flex justify-center items-center">
-                <p className='text-center' style={{ fontSize: "13px" }}>Women's Western Clothing </p>
+                <p className='text-center' style={{ fontSize: "13px" }}>sharees</p>
               </div>
             </div>
 
-            <div className="col-span-3 flex justify-center items-center flex-col" id='circle1'>
+            <div className="col-span-3 flex justify-center items-center flex-col mainCircle" id='circle1'>
               <div className="circle7 h-23 w-23 rounded-full">
                 <div className="img7 h-23 w-23 rounded-full"></div>
               </div>
@@ -90,7 +92,7 @@ function Home() {
               </div>
             </div>
 
-            <div className="col-span-3 flex justify-center items-center flex-col" id='circle1'>
+            <div className="col-span-3 flex justify-center items-center flex-col mainCircle" id='circle1'>
               <div className="circle8 h-23 w-23 rounded-full">
                 <div className="img8 h-23 w-23 rounded-full"></div>
               </div>
@@ -102,7 +104,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="col-span-6"></div>
+        <div className="col-span-5"></div>
       </div>
     </>
   )

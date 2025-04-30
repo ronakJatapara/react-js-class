@@ -3,9 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
-#fMain{
-    margin-left: 40px;
+#fmain2{
+    border: 1px solid red;
+    width: 50%;
 }
+#fMain{
+    margin-left: 50px;
+    width: 80%;
+}
+
 .circle1{
     display:flex ;
     justify-content: center;
