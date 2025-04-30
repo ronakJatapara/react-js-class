@@ -29,7 +29,7 @@
 
 #btn1,
 #btn2 {
-    width: 110px;
+    width: 200px;
     height: 45px;
     color: white;
     border: none;
@@ -150,6 +150,11 @@ footer{
     width: 100%;
     background-color: black;
 
+}
+#googleButtonLogin{
+    width: 200px;
+    height: 50px;
+    border: 1px solid black;
 }
 
 /* 📱 max-width: 968px */

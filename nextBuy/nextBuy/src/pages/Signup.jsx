@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import Navbar from '../components/navbar'
 import Navbar2 from '../components/navbar2'
 import "../style/signup.css"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Footer from '../components/Footer'
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase"; 
+import { auth, db } from "../firebase"; 
+import { doc, setDoc } from 'firebase/firestore'
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 function Signup() {
 
@@ -25,49 +26,99 @@ function Signup() {
    const[passError,setPassError] = useState(false)
 
 
+   const navigate = useNavigate()
 
 
 
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  // Field validation
+  fname.length === 0 ? setFnameError(true) : setFnameError(false);
+  lname.length === 0 ? setLnameError(true) : setLnameError(false);
+  email.length === 0 ? setEmailError(true) : setEmailError(false);
+  pass.length === 0 ? setPassError(true) : setPassError(false);
+
+  // Show toast if any field is empty
+  if (fname.length === 0 || lname.length === 0 || email.length === 0 || pass.length === 0) {
+    toast.error("Please fill all required fields!", {
+      position: "top-right",
+      autoClose: 2000,
+    });
+    return;
+  }
+
+  try {
+    // Firebase Authentication to create user
+    const userCredential = await createUserWithEmailAndPassword(auth, email, pass);
+    const user = userCredential.user;
+    console.log(user);
+
+    // Store user details in Firestore (without password)
+    const userRef = doc(db, "users", user.uid);
+    await setDoc(userRef, {
+      firstName: fname,
+      lastName: lname,
+      email: email,
+      uid: user.uid,
+      lastLogin: new Date().toISOString(),
+    });
+
+    // Reset input fields
+    setFname("");
+    setLname("");
+    setEmail("");
+    setPass("");
+
+    // Success toast
+    toast.success("Registered Successfully!", {
+      position: "top-right",
+      autoClose: 2000,
+    });
+  } catch (error) {
+    console.error(error);
+    toast.error(error.message, {
+      position: "top-right",
+      autoClose: 2000,
+    });
+  }
+};
+
+ 
       
-      
-   const handleSubmit = async (e) => {
-     e.preventDefault();
-   
-     fname.length === 0 ? setFnameError(true) : setFnameError(false);
-     lname.length === 0 ? setLnameError(true) : setLnameError(false);
-     email.length === 0 ? setEmailError(true) : setEmailError(false);
-     pass.length === 0 ? setPassError(true) : setPassError(false);
-   
-     if (fname.length === 0 || lname.length === 0 || email.length === 0 || pass.length === 0) {
-       toast.error("Please fill all required fields!", {
-         position: "top-right",
-         autoClose: 2000,
-       });
-       return;
-     }
-   
-     try {
-       const userCredential = await createUserWithEmailAndPassword(auth, email, pass);
-       console.log(userCredential.user);
-   
-       setFname("");
-       setLname("");
-       setEmail("");
-       setPass("");
-   
-       toast.success("Registered Successfully!", {
-         position: "top-right",
-         autoClose: 2000,
-       });
-     } catch (error) {
-       console.error(error);
-       toast.error(error.message, {
-         position: "top-right",
-         autoClose: 2000,
-       });
-     }
-   };
-   
+const handleGoogleSignUp = async () => {
+  const provider = new GoogleAuthProvider();
+
+  try {
+    const result = await signInWithPopup(auth, provider);
+    const user = result.user;
+
+    const userRef = doc(db, "users", user.uid);
+    await setDoc(userRef, {
+      firstName: user.displayName?.split(" ")[0] || "",
+      lastName: user.displayName?.split(" ")[1] || "",
+      email: user.email,
+      uid: user.uid,
+      lastLogin: new Date().toISOString(),
+    }, { merge: true });
+
+    toast.success("Registered with Google!", {
+      position: "top-right",
+      autoClose: 1000,
+    });
+
+    navigate("/");
+  } catch (error) {
+    console.error("Google Sign-up Error:", error);
+    toast.error("Google sign-up failed!", {
+      position: "top-right",
+      autoClose: 2000,
+    });
+  }
+};
+
+  
      
 
   return (
@@ -114,6 +165,10 @@ function Signup() {
 
           <button type='submit' id='btn6' className='rounded-lg cursor-pointer'>register</button>
           <Link to={"/login"} id='btn7' className='rounded-lg text-center flex justify-center items-center cursor-pointer'><button type='button' >login</button></Link>
+          <button id='googleButton' type='button' className='rounded-lg flex justify-center items-center cursur-pointer' onClick={handleGoogleSignUp}>
+             <img src="googleLogo.png" alt="" style={{width:"40px" , height:"40px"}} /><font className="text-md">Continue with google</font>
+</button>
+
 
         </form>
       </div>
@@ -206,7 +261,6 @@ function Signup() {
 }
 
 export default Signup
-
 
 
 

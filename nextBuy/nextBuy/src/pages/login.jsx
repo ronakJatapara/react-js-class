@@ -2,10 +2,15 @@ import React, { useState } from 'react'
 import Navbar from '../components/navbar'
 import Navbar2 from '../components/navbar2'
 import "../style/login.css"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Footer from '../components/Footer'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"; 
+import { doc, getFirestore, setDoc } from "firebase/firestore"; 
+import { auth, db } from "../firebase";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+
 
 function Login() {
   
@@ -14,38 +19,92 @@ function Login() {
   const[loginEmailError,setLoginEmailError] = useState(false)
   const[loginPassError,setLoginPassError] = useState(false)
 
-  const handleSubmit = (e)=>{
-    e.preventDefault()
+ const navigate = useNavigate() 
+ 
 
-   loginEmail.length === 0 ? setLoginEmailError(true) : setLoginEmailError(false)
-   loginPass.length === 0 ? setLoginPassError(true) : setLoginPassError(false)
+  
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-   if(loginEmail.length == 0 || loginPass == 0)
-   {
-      toast.error("Please fill all required fields!", {
-          position: "top-right",
-          autoClose: 2000,
-        });
-       return;
-   }
-   else{
-    
-      toast.success("Registered Successfully!", {
-        position: "top-right",
-        autoClose: 2000,
-      });
-   }
+  setLoginEmailError(loginEmail.length === 0);
+  setLoginPassError(loginPass.length === 0);
 
-
+  if (loginEmail.length === 0 || loginPass.length === 0) {
+    toast.error("Please fill all required fields!", {
+      position: "top-right",
+      autoClose: 2000,
+    });
+    return;
   }
 
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPass);
+    const user = userCredential.user;
+
+    toast.success("Logged in successfully!", {
+      position: "top-right",
+      autoClose: 1000,
+    });
+
+    const userRef = doc(db, "users", user.uid);
+    await setDoc(userRef, {
+      lastLogin: new Date().toISOString(),
+    }, { merge: true }); 
+
+    setLoginEmail("");
+    setLoginPass("");
+    
+    navigate("/")
+   
+
+  } catch (error) {
+    toast.error("Invalid Email or Password!", {
+      position: "top-right",
+      autoClose: 1000,
+    });
+    console.error("Login Error:", error);
+  }
+};
+  
+const handleGoogleSignUp = async () => {
+  const provider = new GoogleAuthProvider();
+
+  try {
+    const result = await signInWithPopup(auth, provider);
+    const user = result.user;
+
+    const userRef = doc(db, "users", user.uid);
+    await setDoc(userRef, {
+      firstName: user.displayName?.split(" ")[0] || "",
+      lastName: user.displayName?.split(" ")[1] || "",
+      email: user.email,
+      uid: user.uid,
+      lastLogin: new Date().toISOString(),
+    }, { merge: true });
+
+    toast.success("Registered with Google!", {
+      position: "top-right",
+      autoClose: 1000,
+    });
+
+    navigate("/");
+  } catch (error) {
+    console.error("Google Sign-up Error:", error);
+    toast.error("Google sign-up failed!", {
+      position: "top-right",
+      autoClose: 2000,
+    });
+  }
+};
+  
 
   return (
     <>
         <Navbar></Navbar>
         <Navbar2></Navbar2>
         <br /><br />
-      
+      <br /><br /><br /><br /><br /><br />
+      <ToastContainer></ToastContainer>
       <div className="container">
         <div className="title">
                  <h1 className='text-4xl text-center'>Log in</h1>
@@ -74,6 +133,11 @@ function Login() {
               <br /><br />
 
               <button type="submit" id='btn1' className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Sign In</button>
+              <br />
+              <br />
+              <button id='googleButtonLogin' type='button' className='rounded-lg flex justify-center items-center cursur-pointer' onClick={handleGoogleSignUp}>
+             <img src="googleLogo.png" alt="" style={{width:"40px" , height:"40px"}} /><font className="text-md">Continue with google</font>
+</button>
 
              </form>
            </div>
@@ -176,6 +240,9 @@ function Login() {
 }
 
 export default Login
+
+
+
 
 
 
