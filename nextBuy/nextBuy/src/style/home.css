@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#fMain{
+    margin-left: 40px;
+}
+.circle1{
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.img1{
+    background-image: url("/circle1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: .5s;
+}
+.circle2{
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.img2{
+    background-image: url("/circle2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: .5s;
+}
+.circle3{
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.img3{
+    background-image: url("/circle3.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: .5s;
+}
+.circle4{
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.img4{
+    background-image: url("/circle4.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: .5s;
+}
+.circle5{
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.img5{
+    background-image: url("/circle5.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: .5s;
+}
+.circle6{
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.img6{
+    background-image: url("/circle6.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: .5s;
+}
+.circle7{
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.img7{
+    background-image: url("/circle7.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: .5s;
+}
+.circle8{
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.img8{
+    background-image: url("/circle8.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: .5s;
+}
+.circle1:hover .img1,.circle2:hover .img2,.circle3:hover .img3,.circle4:hover .img4,.circle5:hover .img5,.circle6:hover .img6,.circle7:hover .img7,.circle8:hover .img8{
+    transform: scale(1.1);
+}
+
+  
