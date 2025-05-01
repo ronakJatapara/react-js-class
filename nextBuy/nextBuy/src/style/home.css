@@ -120,4 +120,47 @@
     transform: scale(1.1);
 }
 
+.box1{
+    height: 300px;
+    width: 17%;
+    /* border: 1px solid black; */
+    cursor: pointer;
+}
+.sliderImage1{
+    height: 225px;
+    width: 225px;
+    /* border: 1px solid black; */
+    overflow: hidden;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+.sliderImage1 img{
+    height: 100%;
+    width: 100%;
+    transition: .7s;
+
+    
+}
+.box1:hover img{
+    transform: scale(1.1);
+}
+#sliderTitle1{
+    padding-left: 30px;
+}
+#sliderItem1{
+    padding-left: 30px;
+}
+.box1:hover #sliderTitle1{
+    text-decoration: underline;
+    
+}
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  
   
