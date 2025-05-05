@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* z-index: 50; */
 }
 @tailwind base;
 @tailwind components;
@@ -14,4 +15,5 @@
   #navbar{
     position: fixed;
     top: 0;
+    width: 100%;
 }

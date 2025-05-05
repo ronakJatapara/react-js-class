@@ -105,7 +105,6 @@ const handleGoogleSignUp = async () => {
         <br /><br />
       <br /><br /><br /><br /><br /><br />
       <ToastContainer></ToastContainer>
-      <div className="container">
         <div className="title">
                  <h1 className='text-4xl text-center'>Log in</h1>
                  <br />
@@ -159,7 +158,21 @@ const handleGoogleSignUp = async () => {
 <br /><br />
 
 
-        <div className="grid grid-cols-12">
+        
+
+           <div className="extra grid grid-cols-12 border border-black  rounded-lg relative" id='main' style={{width:"220px",height:"60px" , }}>
+            <div className="col-span-3 flex justify-center items-center bg-white " id='pOne'>
+              <img src="download.svg" alt=""  style={{width:"80%"}}/>
+            </div>
+            <div className="col-span-9  text-white flex justify-center items-center  cursor-pointer" id='pTwo' style={{backgroundColor:"#00ABBF",paddingTop:"2px",borderRadius:"0px 7px 7px 0px"}}>
+              <p className='text-sm'>Protected by hCaptcha
+                <br />
+            <Link style={{fontSize:"11px"}}>Privacy . </Link>
+            <Link style={{fontSize:"11px"}}>Terms</Link></p>
+            </div>
+           </div>
+      
+      <div className="grid grid-cols-12">
               <div className="col-span-2 border-l border-r border-gray-200 flex justify-center flex-col cursor-pointer" >
                 {/* <br /><br /><br /> */}
                <p className='flex justify-center' style={{fontSize:"15px" , fontWeight:"500"}}>your Feddback means the
@@ -221,19 +234,6 @@ const handleGoogleSignUp = async () => {
         </div>
      <Footer></Footer>
 
-           <div className="extra grid grid-cols-12 border border-black  rounded-lg relative" id='main' style={{width:"220px",height:"60px" , }}>
-            <div className="col-span-3 flex justify-center items-center bg-white " id='pOne'>
-              <img src="download.svg" alt=""  style={{width:"80%"}}/>
-            </div>
-            <div className="col-span-9  text-white flex justify-center items-center  cursor-pointer" id='pTwo' style={{backgroundColor:"#00ABBF",paddingTop:"2px",borderRadius:"0px 7px 7px 0px"}}>
-              <p className='text-sm'>Protected by hCaptcha
-                <br />
-            <Link style={{fontSize:"11px"}}>Privacy . </Link>
-            <Link style={{fontSize:"11px"}}>Terms</Link></p>
-            </div>
-           </div>
-
-      </div>
     </>
 
   )

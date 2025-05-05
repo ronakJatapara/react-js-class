@@ -12,7 +12,7 @@ import "../style/navbar2.css"
 export default function Navbar2() {
   return (
    <>
-   <div className="container mx:auto bg-black"  style={{backgroundColor:"black"}} id='navbar2'>
+   <div className=" mx:auto bg-black"  style={{backgroundColor:"black"}} id='navbar2'>
     
    <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" className='text-black' style={{backgroundColor:"black"}}>

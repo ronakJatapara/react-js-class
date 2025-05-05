@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  
 }
 #fmain2{
     border: 1px solid red;
@@ -125,6 +126,8 @@
     width: 17%;
     /* border: 1px solid black; */
     cursor: pointer;
+    /* overflow: scroll; */
+    z-index: -1;
 }
 .sliderImage1{
     height: 225px;
@@ -161,6 +164,50 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  
+  #videoSlider{
+    width: 80%;
+    margin-left: 10%;
+    position: relative;
+    border: 1px solid red;
+    height: 500px;
+    z-index: -1;
+  }
+  #videoSlide1{
+    width: 22%;
+height: 90%;
+border: 1px solid red;
+/* margin-left: -10%; */
+  }
+  #videoSlide2{
+    width: 26%;
+height: 90%;
+border: 1px solid red;
+  }
+  #videoSlide3{
+    width: 24%;
+height: 100%;
+border: 1px solid red;
+  }
+  #videoSlide4{
+    width: 26%;
+height: 90%;
+border: 1px solid red;
+  }
+  #videoSlide5{
+    width: 22%;
+height: 90%;
+border: 1px solid red;
+margin-right: -10%;
+  }
+
+.womenSection{
+    width: 94%;
+    margin-left: 3%;
+}
+  .wSection1{
+    width: 19%;
+    height: 300px;
+    border: 1px solid red;
+  }
   
   

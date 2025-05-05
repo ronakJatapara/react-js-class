@@ -26,6 +26,9 @@ function Home() {
     return () => clearInterval(interval); // cleanup on unmount
   }, []);
 
+  
+  
+
   return (
     <>
       <Navbar />
@@ -121,7 +124,7 @@ function Home() {
 
       <br /><br /><br /><br /><br /><br />
 
-      {/* Slider section starts here */}
+     
       <div className="relative px-4 py-4">
         {/* Scroll buttons */}
         <button
@@ -140,10 +143,10 @@ function Home() {
 
         {/* Slider content */}
         <div
-          className="overflow-x-auto whitespace-nowrap scroll-smooth scrollbar-hide"
+          className="overflow-x-auto whitespace-nowrap scroll-smooth scrollbar-hide  "
           ref={sliderRef}
         >
-          <div className="flex gap-13">
+          <div className="flex gap-8">
             <div className="box1 inline-block text-center">
               <p className='text-black' id='sliderTitle1'>SmartPhone Accessories</p>
               <div className="sliderImage1 mt-4">
@@ -186,8 +189,26 @@ function Home() {
           </div>
         </div>
       </div>
-      {/* Slider End */}
+
+      <br /><br /><br />
+      <h2 className='text-4xl text-center'>Latest Fashion in Motion</h2>
+      <br /><br /><br />
+
+
+   <div className="womenSection flex justify-evenly">
+    <div className="wSection1"></div>
+    <div className="wSection1"></div>
+    <div className="wSection1"></div>
+    <div className="wSection1"></div>
+    <div className="wSection1"></div>
+
+   </div>
+
+
+
+    
     </>
+    
   );
 }
 

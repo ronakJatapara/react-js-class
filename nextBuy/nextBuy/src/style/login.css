@@ -4,14 +4,13 @@
     box-sizing: border-box;
     /* background-color: red; */
 }
-
 #form {
-    width: 70%;
+    width: 100%; /* Adjust the width to fill the container */
     max-width: 600px;
-    /* margin: 40px auto; */
     padding: 20px;
-    margin-left: 20%;
+    margin: 0 auto; /* Center the form horizontally */
 }
+
 
 #inp1,
 #inp2 {
