@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from 'react';
 import Navbar from '../components/navbar'
 import Navbar2 from '../components/navbar2'
 import "../style/home.css"
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchApi } from '../feature/CrudSlice';
 
 function Home() {
   const sliderRef = useRef();
@@ -26,8 +28,18 @@ function Home() {
     return () => clearInterval(interval); // cleanup on unmount
   }, []);
 
+
+  let dispatch  = useDispatch()
+  useEffect(()=>{
+     dispatch(fetchApi())
+  },[])
   
-  
+  const record =  useSelector((state)=>{
+    return state.SliceReducer
+  })
+
+
+
 
   return (
     <>
@@ -195,12 +207,25 @@ function Home() {
       <br /><br /><br />
 
 
-   <div className="womenSection flex justify-evenly">
-    <div className="wSection1"></div>
-    <div className="wSection1"></div>
-    <div className="wSection1"></div>
-    <div className="wSection1"></div>
-    <div className="wSection1"></div>
+   <div className="womenSection ">
+ 
+   <div className="grid grid-cols-12  grid place-items-center min-h-screen">
+  {record.data.map((el, i) => {
+    return (
+      <div key={i} className="col-span-3 border p-2 rounded shadow text-center" id='WomenSectionDetails'>
+        <div className="womenSectionImage">
+        <img src={el.image} alt={el.name} className="w-full h-40 object-cover" />
+        </div>
+        <div className="womenSectionAllText">
+        <p className="mt-2">{el.name}</p>
+        </div>
+      </div>
+    );
+  })}
+</div>
+
+
+
 
    </div>
 

@@ -204,10 +204,10 @@ margin-right: -10%;
     width: 94%;
     margin-left: 3%;
 }
-  .wSection1{
-    width: 19%;
-    height: 300px;
-    border: 1px solid red;
-  }
+#WomenSectionDetails
+{
+    height: 400px;
+    width: 80%;
+}
   
   
