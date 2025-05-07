@@ -4,8 +4,4 @@
     box-sizing: border-box;
     /* background-color: red; */
 }
-#navbar2{
-    position: fixed;
-    top: 100px;
-    width: 100%;
-}
+

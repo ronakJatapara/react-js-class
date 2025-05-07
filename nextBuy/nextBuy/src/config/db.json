@@ -2,39 +2,76 @@
     "product":[
         {
            "image":"https://next-buy.in/cdn/shop/files/digital-printed-lehenga-set.webp?v=1745852904&width=360",
-           "name":"alhd" 
+           "name":"Elegant Digital Printed Lehenga Set with Stitched Blouse",
+           "rs":"Rs. 2,599.00" ,
+           "ors" :"Rs. 4500.00",
+           "in" : "in stock",
+           "dis":"-42%"
+
         },
         {
-            "image":"https://cdn.shopify.com/s/files/1/0712/5935/7410/files/ethnic-wear-lehenga-for-navratri.webp?v=1745428192&width=533",
-            "name":"alhd" 
-         },
-         {
-            "image":"https://next-buy.in/cdn/shop/files/digital-printed-lehenga-set.webp?v=1745852904&width=360",
-            "name":"alhd" 
-         },
-         {
-            "image":"https://next-buy.in/cdn/shop/files/digital-printed-lehenga-set.webp?v=1745852904&width=360",
-            "name":"alhd" 
-         }
-         ,
-         {
-            "image":"https://next-buy.in/cdn/shop/files/digital-printed-lehenga-set.webp?v=1745852904&width=360",
-            "name":"alhd" 
-         }
-         ,
-         {
-            "image":"https://next-buy.in/cdn/shop/files/digital-printed-lehenga-set.webp?v=1745852904&width=360",
-            "name":"alhd" 
-         }
-         ,
-         {
-            "image":"https://next-buy.in/cdn/shop/files/digital-printed-lehenga-set.webp?v=1745852904&width=360",
-            "name":"alhd" 
-         }
-         ,
-         {
-            "image":"https://next-buy.in/cdn/shop/files/digital-printed-lehenga-set.webp?v=1745852904&width=360",
-            "name":"alhd" 
-         }
+         "image":"https://cdn.shopify.com/s/files/1/0712/5935/7410/files/ethnic-wear-lehenga-for-navratri.webp?v=1745428192&width=533",
+         "name":"Traditional Gamthi Work Cotton Lehenga Set with Gota Patti & Mirror Blouse – Fully Stitched",
+         "rs":"Rs. 2,699.00" ,
+         "ors" :"Rs. 10,999.00",
+         "in" : "in stock",
+           "dis":"-48%"
+
+      },
+      {
+         "image":"https://next-buy.in/cdn/shop/files/sequin-work-dupatta-border.webp?v=1744895041&width=360",
+         "name":"Embroidered Georgette Lehenga Set with Heavy Sequin Work and Fully Stitched Top",
+         "rs":"Rs. 2,560.00" ,
+         "ors" :"Rs. 4800.00",
+         "in" : "in stock",
+           "dis":"-42%"
+
+      },
+      {
+         "image":"https://next-buy.in/cdn/shop/files/net-embroidered-lehenga-full-view.webp?v=1745425197&width=360",
+         "name":"Embroidered Georgette Lehenga Set with Heavy Sequin Work and Fully Stitched Top",
+         "rs":"Rs. 2,599.00" ,
+         "ors" :"Rs. 4500.00",
+         "in" : "in stock",
+           "dis":"-62%"
+
+      },
+      {
+         "image":"https://next-buy.in/cdn/shop/files/digital-printed-lehenga-set.webp?v=1745852904&width=360",
+         "name":"Elegant Digital Printed Lehenga Set with Stitched Blouse",
+         "rs":"Rs. 2,599.00" ,
+         "ors" :"Rs. 4500.00",
+         "in" : "in stock",
+         "dis":"-42%"
+
+      },
+      {
+       "image":"https://cdn.shopify.com/s/files/1/0712/5935/7410/files/ethnic-wear-lehenga-for-navratri.webp?v=1745428192&width=533",
+       "name":"Traditional Gamthi Work Cotton Lehenga Set with Gota Patti & Mirror Blouse – Fully Stitched",
+       "rs":"Rs. 2,699.00" ,
+       "ors" :"Rs. 10,999.00",
+       "in" : "in stock",
+         "dis":"-48%"
+
+    },
+    {
+       "image":"https://next-buy.in/cdn/shop/files/sequin-work-dupatta-border.webp?v=1744895041&width=360",
+       "name":"Embroidered Georgette Lehenga Set with Heavy Sequin Work and Fully Stitched Top",
+       "rs":"Rs. 2,560.00" ,
+       "ors" :"Rs. 4800.00",
+       "in" : "in stock",
+         "dis":"-42%"
+
+    },
+    {
+       "image":"https://next-buy.in/cdn/shop/files/net-embroidered-lehenga-full-view.webp?v=1745425197&width=360",
+       "name":"Embroidered Georgette Lehenga Set with Heavy Sequin Work and Fully Stitched Top",
+       "rs":"Rs. 2,599.00" ,
+       "ors" :"Rs. 4500.00",
+       "in" : "in stock",
+         "dis":"-62%"
+
+    }
+        
     ]
 }
