@@ -4,10 +4,10 @@
            "image":"https://next-buy.in/cdn/shop/files/digital-printed-lehenga-set.webp?v=1745852904&width=360",
            "name":"Elegant Digital Printed Lehenga Set with Stitched Blouse",
            "rs":"Rs. 2,599.00" ,
+           "mainData":"main",
            "ors" :"Rs. 4500.00",
            "in" : "in stock",
-           "dis":"-42%"
-
+           "dis":"-42"
         },
         {
          "image":"https://cdn.shopify.com/s/files/1/0712/5935/7410/files/ethnic-wear-lehenga-for-navratri.webp?v=1745428192&width=533",
@@ -15,7 +15,16 @@
          "rs":"Rs. 2,699.00" ,
          "ors" :"Rs. 10,999.00",
          "in" : "in stock",
-           "dis":"-48%"
+           "dis":"-48%",
+           "moreData":"sdhfsdiu",
+           "blackImage":"https://cdn.shopify.com/s/files/1/0712/5935/7410/files/gamthi-work-lehenga-set.webp?v=1745428088&width=533",
+           "redImage":"https://cdn.shopify.com/s/files/1/0712/5935/7410/files/gota-patti-rayon-cotton-lehenga.webp?v=1745428110&width=533",
+           "yellowImage":"https://cdn.shopify.com/s/files/1/0712/5935/7410/files/mirror-work-blouse-cotton.webp?v=1745428139&width=533",
+           "whiteImage":"https://cdn.shopify.com/s/files/1/0712/5935/7410/files/stitched-lehenga-choli-canvas.webp?v=1745428165&width=533",
+           "orangeImage":"https://cdn.shopify.com/s/files/1/0712/5935/7410/files/fully-stitched-gamthi-blouse.webp?v=1745428223&width=533",
+           "brandyImage":"https://cdn.shopify.com/s/files/1/0712/5935/7410/files/fully-stitched-gamthi-blouse-nextbuy.webp?v=1745428255&width=533"
+          
+
 
       },
       {
@@ -24,7 +33,8 @@
          "rs":"Rs. 2,560.00" ,
          "ors" :"Rs. 4800.00",
          "in" : "in stock",
-           "dis":"-42%"
+           "dis":"-42%",
+           "mainData":"main"
 
       },
       {
@@ -33,43 +43,50 @@
          "rs":"Rs. 2,599.00" ,
          "ors" :"Rs. 4500.00",
          "in" : "in stock",
-           "dis":"-62%"
+           "dis":"-62%",
+           "mainData":"main"
 
       },
       {
-         "image":"https://next-buy.in/cdn/shop/files/digital-printed-lehenga-set.webp?v=1745852904&width=360",
-         "name":"Elegant Digital Printed Lehenga Set with Stitched Blouse",
-         "rs":"Rs. 2,599.00" ,
-         "ors" :"Rs. 4500.00",
+         "image":"https://cdn.shopify.com/s/files/1/0712/5935/7410/files/three-piece-western-wedding-outfit.webp?v=1744886044&width=533",
+         "name":"Three-Piece Western Outfit for Wedding Season – Tube Blouse, Draped Skirt, and Shrug",
+         "rs":"Rs. 2,399.00" ,
+         "ors" :"Rs. 3900.00",
          "in" : "in stock",
-         "dis":"-42%"
+         "dis":"-38%",
+         "moreData2":" ",
+         "boysenberry":"https://cdn.shopify.com/s/files/1/0712/5935/7410/files/chinon-shrug-sequence-embroidery.webp?v=1744886142&width=533",
+         "indianYellow":"https://cdn.shopify.com/s/files/1/0712/5935/7410/files/western-outfit-for-weddings-nextbuy.webp?v=1744886292&width=533"
 
       },
       {
-       "image":"https://cdn.shopify.com/s/files/1/0712/5935/7410/files/ethnic-wear-lehenga-for-navratri.webp?v=1745428192&width=533",
-       "name":"Traditional Gamthi Work Cotton Lehenga Set with Gota Patti & Mirror Blouse – Fully Stitched",
-       "rs":"Rs. 2,699.00" ,
-       "ors" :"Rs. 10,999.00",
+       "image":"https://next-buy.in/cdn/shop/files/yellow-lehenga-choli-trendy-style.webp?v=1743060125&width=360",
+       "name":"Designer Lehenga-Saree with Embroidered Pallu & Full Stitch",
+       "rs":"Rs. 2,199.00" ,
+       "ors" :"Rs. 4,300.00",
        "in" : "in stock",
-         "dis":"-48%"
+         "dis":"-48%",
+           "mainData":"main"
 
     },
     {
-       "image":"https://next-buy.in/cdn/shop/files/sequin-work-dupatta-border.webp?v=1744895041&width=360",
-       "name":"Embroidered Georgette Lehenga Set with Heavy Sequin Work and Fully Stitched Top",
-       "rs":"Rs. 2,560.00" ,
-       "ors" :"Rs. 4800.00",
+       "image":"https://next-buy.in/cdn/shop/files/photo_3_2025-03-19_12-40-21.jpg?v=1745085251&width=360",
+       "name":"Festival Special Crop Top with Jacket & Lehenga – Designer Ethnic Wear",
+       "rs":"Rs. 1,850.00" ,
+       "ors" :"Rs. 4100.00",
        "in" : "in stock",
-         "dis":"-42%"
+         "dis":"-54%",
+           "mainData":"main"
 
     },
     {
-       "image":"https://next-buy.in/cdn/shop/files/net-embroidered-lehenga-full-view.webp?v=1745425197&width=360",
-       "name":"Embroidered Georgette Lehenga Set with Heavy Sequin Work and Fully Stitched Top",
-       "rs":"Rs. 2,599.00" ,
+       "image":"https://next-buy.in/cdn/shop/files/IMG-20250304-WA0490.jpg?v=1745084805&width=360",
+       "name":"Elegant Soft Butter Silk Lehenga – Digital Print & Mirror Work",
+       "rs":"Rs. 1,999.00" ,
        "ors" :"Rs. 4500.00",
        "in" : "in stock",
-         "dis":"-62%"
+         "dis":"-55%",
+           "mainData":"main"
 
     }
         

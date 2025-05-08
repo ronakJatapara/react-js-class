@@ -206,7 +206,7 @@ margin-right: -10%;
 }
 #WomenSectionDetails
 {
-    height: 500px;
+    height: 580px;
     width: 90%;
     display: flex;
     /* justify-content: center; */
@@ -337,4 +337,10 @@ margin-right: -10%;
 #seeMore:hover{
     background-color: white;
     color: black;
+}
+#select{
+    width: 160px;
+    height: 45px;
+    margin-top: 10px;
+    padding: 5px 5px 5px 5px;
 }
