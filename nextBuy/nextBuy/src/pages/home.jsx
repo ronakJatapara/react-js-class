@@ -5,6 +5,7 @@ import "../style/home.css"
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchApi } from '../feature/CrudSlice';
 import { colors } from '@mui/material';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Home() {
   const sliderRef = useRef();
@@ -94,12 +95,22 @@ const getSelectColor = (el,i)=>{
     }
  }
 
+let navigate = useNavigate()
+ const [visible,setVisible] = useState(4)    // for extra image add
+ const [step,setStep] = useState(1)
+
+ const handleProduct = ()=>{
+       setVisible(visible+4)
+       setStep(step+1) 
+     
+ }
+
   return (
     <>
       <Navbar />
       <Navbar2 />
 
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br /><br /><br />
 
       <div className="grid grid-cols-12">
         <div className="col-span-5">
@@ -262,7 +273,7 @@ const getSelectColor = (el,i)=>{
    <div className="womenSection ">
  
    <div className="grid grid-cols-12  grid place-items-center min-h-screen">
-  {record.data.map((el, i) => {
+  {record.data.slice(0,visible).map((el, i) => {
     return (
       <div key={i} className="col-span-3  p-2 rounded shadow text-center" id='WomenSectionDetails'>
         <div className="womenSectionImage">
@@ -271,11 +282,11 @@ const getSelectColor = (el,i)=>{
         {el.moreData &&    <img src={getSelectColor(el,i)} alt="" className="w-full h-40 object-cover"/>}
          
         {el.moreData2 && <img src={getDressType(el,i)} alt="" className="w-full h-40 object-cover" /> } 
-        <button id='imgBtn1'><i class="fa-regular fa-heart"></i>
+        <button id='imgBtn1'><i className="fa-regular fa-heart"></i>
         
         
         </button>
-        <button id='imgBtn2'><i class="fa-solid fa-eye"></i></button>
+        <button id='imgBtn2'><i className="fa-solid fa-eye"></i></button>
         <button id='imgBtn3' className='rounded'>Quick Add</button>
         <button id="imgBtn4">{el.dis}</button>
 
@@ -309,7 +320,7 @@ const getSelectColor = (el,i)=>{
 
 
 <div className="inStock flex justify-center gap-1 " style={{paddingTop:"10px"}}>
-<font><i class="fa-solid fa-circle" style={{fontSize:"6px",color:"#479043"}}></i></font><font id="stock"  style={{paddingTop:"1px",color:"#479043"}}>{el.in}</font>
+<font><i className="fa-solid fa-circle" style={{fontSize:"6px",color:"#479043"}}></i></font><font id="stock"  style={{paddingTop:"1px",color:"#479043"}}>{el.in}</font>
 
 </div>
 
@@ -325,7 +336,23 @@ const getSelectColor = (el,i)=>{
    </div>
 
    <div className="seeMore flex justify-center">
-    <button id='seeMore' className='rounded'>see More Product</button>
+    {/* <button id='seeMore' className='rounded'>see More Product</button> */}
+    
+    {
+  step < 2 ? (
+    <div>
+      <button id="seeMore" className="rounded" onClick={handleProduct}>
+        See More Product
+      </button>
+    </div>
+  ) : (
+    <Link id="seeMore" className='rounded text-center' style={{paddingTop:"6px"}} to="/women">
+      See More Product
+    </Link>
+  )
+}
+
+    
 
    </div>
 

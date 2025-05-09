@@ -333,6 +333,8 @@ margin-right: -10%;
     color: white;
     margin-bottom: 10px;
     transition: .3s;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 #seeMore:hover{
     background-color: white;
