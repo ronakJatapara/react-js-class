@@ -5,7 +5,8 @@ import "../style/home.css"
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchApi } from '../feature/CrudSlice';
 import { colors } from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
+import {  Link, useNavigate } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 function Home() {
   const sliderRef = useRef();
@@ -95,15 +96,10 @@ const getSelectColor = (el,i)=>{
     }
  }
 
-let navigate = useNavigate()
  const [visible,setVisible] = useState(4)    // for extra image add
- const [step,setStep] = useState(1)
 
- const handleProduct = ()=>{
-       setVisible(visible+4)
-       setStep(step+1) 
-     
- }
+
+
 
   return (
     <>
@@ -336,21 +332,13 @@ let navigate = useNavigate()
    </div>
 
    <div className="seeMore flex justify-center">
-    {/* <button id='seeMore' className='rounded'>see More Product</button> */}
     
-    {
-  step < 2 ? (
-    <div>
-      <button id="seeMore" className="rounded" onClick={handleProduct}>
-        See More Product
-      </button>
-    </div>
-  ) : (
-    <Link id="seeMore" className='rounded text-center' style={{paddingTop:"6px"}} to="/women">
-      See More Product
-    </Link>
-  )
-}
+    
+  
+  
+
+{ visible === 4 ?  <button id="seeMore" className="rounded" onClick={()=>{setVisible(visible+4)}}> See More Product </button> 
+                :  <Link to="/women"> <button id="seeMore" className="rounded" > See More Product </button> </Link> }
 
     
 
@@ -358,7 +346,7 @@ let navigate = useNavigate()
 
    
 
-
+<Footer></Footer>
 
     
     </>
