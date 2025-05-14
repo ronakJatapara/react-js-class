@@ -242,6 +242,10 @@ margin-right: -10%;
      /* margin-top: 5px; */
 
   }
+  .womenSectionImage2 img{
+    height: 100%;
+    width: 100%;
+  }
   .womenSectionImage:hover  img{
     transform: scale(1.1);
   }

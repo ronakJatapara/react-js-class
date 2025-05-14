@@ -3,6 +3,8 @@ import React, { useRef, useEffect, useState } from 'react';
 import Navbar from '../components/navbar'
 import Navbar2 from '../components/navbar2'
 import "../style/home.css"
+import "../style/women.css"
+
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchApi } from '../feature/CrudSlice';
 // import React from 'react';
@@ -79,11 +81,29 @@ function Women() {
      
 
      const getColClass = () => {
-  if (cardView === 1) return 'col-span-12';  // 1 card, full width
   if (cardView === 2) return 'col-span-6';   // 2 cards per row
   if (cardView === 3) return 'col-span-4';   // 3 cards per row
   return 'col-span-3';                          // default 4 cards per row
 };
+
+// const [currentPage,setCurrentPage] = useState(1)
+// const cardsPerPage = 12
+
+// const indexOfLastCard = currentPage * cardsPerPage;
+// const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+// const currentCards = record.data.slice(indexOfFirstCard, indexOfLastCard);
+//  const totalPages = Math.ceil(record.data.length / cardsPerPage);
+
+const [currentPage,setCurrentPage]  = useState(1)
+const cardsPerPage = 12;
+
+// const totalItems = data.length;
+let indexOfLastCard = currentPage * cardsPerPage;
+let indexOfFirstCard = indexOfLastCard-cardsPerPage
+const currentCards = record.data.slice(indexOfFirstCard,indexOfLastCard)
+const totalPages = Math.ceil(record.data.length / cardsPerPage)
+
+
 
 
      
@@ -105,10 +125,11 @@ function Women() {
       </div>
       <div className="col-span-9">
 
-                 <div className="flex gap-3 my-4">
+                 <div className="flex gap-3 my-4" id='topBtn'>
   {[1, 2, 3, 4].map(num => (
     <button
       key={num}
+      id='btns'
       onClick={() => setCardView(num)} // Jo button dabayega, vo state change karega
       className={`px-4 py-2 border rounded ${cardView === num ? 'bg-black text-white' : 'bg-white text-black'}`}
     >
@@ -117,14 +138,15 @@ function Women() {
   ))}
 </div>
 
+<br /><br />
 
         <div className="grid grid-cols-12">
          
-          {record.data.map((el, i) => {
+          {currentCards.map((el, i) => {
     return (
       <div key={i} className={` ${getColClass()}  p-2 rounded shadow text-center`}id='WomenSectionDetails'>
         <div className="womenSectionImage2">
-        {el.mainData && <img src={el.image} alt="" className="w-full h-40 object-cover" />}
+        {el.mainData && <img src={el.image} alt=""  className="w-full h-40 object-cover" />}
 
         {el.moreData &&    <img src={getSelectColor(el,i)} alt="" className="w-full h-40 object-cover"/>}
          
@@ -178,9 +200,90 @@ function Women() {
   })}
 
 
+   
+
+
 
 
         </div>
+
+          {/* Custom Pagination Buttons with Dots */}
+<div className="flex justify-center gap-2 my-6">
+  {/* Prev Button */}
+  <button
+    onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+    disabled={currentPage === 1}
+    className="px-3 py-1 border rounded bg-gray-200"
+  >
+    Prev
+  </button>
+
+  {(() => {
+    const pages = [];
+
+    // Always show first page
+    pages.push(
+      <button
+        key={1}
+        onClick={() => setCurrentPage(1)}
+        className={`px-3 py-1 border rounded ${currentPage === 1 ? 'bg-black text-white' : ''}`}
+      >
+        1
+      </button>
+    );
+
+    // Show dots if currentPage > 4
+    if (currentPage > 4) {
+      pages.push(<span key="startDots" className="px-2">...</span>);
+    }
+
+    // Show middle three pages: currentPage - 1, currentPage, currentPage + 1
+    const start = Math.max(2, currentPage - 1);
+    const end = Math.min(totalPages - 1, currentPage + 1);
+
+    for (let i = start; i <= end; i++) {
+      pages.push(
+        <button
+          key={i}
+          onClick={() => setCurrentPage(i)}
+          className={`px-3 py-1 border rounded ${currentPage === i ? 'bg-black text-white' : ''}`}
+        >
+          {i}
+        </button>
+      );
+    }
+
+    // Show dots if currentPage < totalPages - 3
+    if (currentPage < totalPages - 3) {
+      pages.push(<span key="endDots" className="px-2">...</span>);
+    }
+
+    // Always show last page
+    if (totalPages > 1) {
+      pages.push(
+        <button
+          key={totalPages}
+          onClick={() => setCurrentPage(totalPages)}
+          className={`px-3 py-1 border rounded ${currentPage === totalPages ? 'bg-black text-white' : ''}`}
+        >
+          {totalPages}
+        </button>
+      );
+    }
+
+    return pages;
+  })()}
+
+  {/* Next Button */}
+  <button
+    onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+    disabled={currentPage === totalPages}
+    className="px-3 py-1 border rounded bg-gray-200"
+  >
+    Next
+  </button>
+</div>
+
  
       </div>
      </div>
