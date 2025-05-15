@@ -206,16 +206,19 @@ const totalPages = Math.ceil(record.data.length / cardsPerPage)
 
 
         </div>
+        <br /><br />
 
           {/* Custom Pagination Buttons with Dots */}
-<div className="flex justify-center gap-2 my-6">
+<div className="flex justify-evenly items-center gap-2 my-6" id="allBtns">
   {/* Prev Button */}
   <button
+  id='prevBtns'
     onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
     disabled={currentPage === 1}
     className="px-3 py-1 border rounded bg-gray-200"
   >
-    Prev
+    {/* Prev */}
+    <i class="fa-solid fa-backward"></i>
   </button>
 
   {(() => {
@@ -224,6 +227,7 @@ const totalPages = Math.ceil(record.data.length / cardsPerPage)
     // Always show first page
     pages.push(
       <button
+      id='fBtns'
         key={1}
         onClick={() => setCurrentPage(1)}
         className={`px-3 py-1 border rounded ${currentPage === 1 ? 'bg-black text-white' : ''}`}
@@ -245,6 +249,8 @@ const totalPages = Math.ceil(record.data.length / cardsPerPage)
       pages.push(
         <button
           key={i}
+      id='fBtns'
+
           onClick={() => setCurrentPage(i)}
           className={`px-3 py-1 border rounded ${currentPage === i ? 'bg-black text-white' : ''}`}
         >
@@ -262,6 +268,8 @@ const totalPages = Math.ceil(record.data.length / cardsPerPage)
     if (totalPages > 1) {
       pages.push(
         <button
+      id='fBtns'
+
           key={totalPages}
           onClick={() => setCurrentPage(totalPages)}
           className={`px-3 py-1 border rounded ${currentPage === totalPages ? 'bg-black text-white' : ''}`}
@@ -276,13 +284,16 @@ const totalPages = Math.ceil(record.data.length / cardsPerPage)
 
   {/* Next Button */}
   <button
+  id='nextBtn'
     onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
     disabled={currentPage === totalPages}
     className="px-3 py-1 border rounded bg-gray-200"
   >
-    Next
+    {/* Next */}
+    <i class="fa-solid fa-forward"></i>
   </button>
 </div>
+<br /><br />
 
  
       </div>
