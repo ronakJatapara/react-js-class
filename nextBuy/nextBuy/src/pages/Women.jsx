@@ -1,12 +1,14 @@
-
 import React, { useRef, useEffect, useState } from 'react';
 import Navbar from '../components/navbar'
 import Navbar2 from '../components/navbar2'
+import Footer from '../components/Footer'
+
 import "../style/home.css"
 import "../style/women.css"
 
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchApi } from '../feature/CrudSlice';
+import SidebarFilter from '../components/SidebarFilter'; 
 // import React from 'react';
 
 
@@ -86,24 +88,53 @@ function Women() {
   return 'col-span-3';                          // default 4 cards per row
 };
 
-// const [currentPage,setCurrentPage] = useState(1)
-// const cardsPerPage = 12
 
-// const indexOfLastCard = currentPage * cardsPerPage;
-// const indexOfFirstCard = indexOfLastCard - cardsPerPage;
-// const currentCards = record.data.slice(indexOfFirstCard, indexOfLastCard);
-//  const totalPages = Math.ceil(record.data.length / cardsPerPage);
 
 const [currentPage,setCurrentPage]  = useState(1)
 const cardsPerPage = 12;
 
-// const totalItems = data.length;
 let indexOfLastCard = currentPage * cardsPerPage;
 let indexOfFirstCard = indexOfLastCard-cardsPerPage
 const currentCards = record.data.slice(indexOfFirstCard,indexOfLastCard)
 const totalPages = Math.ceil(record.data.length / cardsPerPage)
 
 
+// search filter sort //
+const [searchTerm, setSearchTerm] = useState("");     // for search input
+const [FilterTerm, setFilterTerm] = useState("all");  // for filter dropdown
+const [sortTerm, setSortTerm] = useState("a to z");   // for sort dropdown
+const [sortedData, setSortedData] = useState([]);
+const [dataSearch, setDataSearch] = useState([]);     // final list to display after filtering
+
+
+useEffect(() => {
+  let updatedData = [...currentCards];
+
+
+  // if (FilterTerm !== "all") {
+  //   updatedData = updatedData.filter(item =>
+  //     item.type.toLowerCase().includes(FilterTerm.toLowerCase())
+  //   );
+  // }
+
+
+  if (searchTerm !== "") {
+    updatedData = updatedData.filter(item =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }
+
+
+  if (sortTerm === "Alphabetically, A to Z") {
+    updatedData.sort((a, b) => a.name.localeCompare(b.name));
+  } else if (sortTerm === "Alphabetically, Z to A") {
+    updatedData.sort((a, b) => b.name.localeCompare(a.name));
+  }
+
+
+
+  setDataSearch(updatedData);
+}, [searchTerm, currentCards, FilterTerm, sortTerm]);
 
 
      
@@ -117,32 +148,82 @@ const totalPages = Math.ceil(record.data.length / cardsPerPage)
       <Navbar2/>
 
 
-    <div className="mainDiv">
+    <div className="mainDiv p-4">
      
-     <div className="grid grid-cols-12 ">
-      <div className="col-span-3">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit illo suscipit dignissimos quae fugiat repellendus enim quod quam animi excepturi? Distinctio fuga et iure ea harum numquam soluta maxime ducimus.
-      </div>
-      <div className="col-span-9">
+     <div className="grid grid-cols-12 gap-4">
+     <div className="col-span-12 md:col-span-3 pl-2 md:pl-6 pt-4" style={{marginLeft:"20px"}}>
+      <br className="hidden md:block" /><br className="hidden md:block" />
+  <div className="mb-6 group w-fit md:pl-[50px]">
+    <h2 className="text-2xl md:text-3xl font-bold text-black">Filters</h2>
+    <div className="h-[2px] w-16 bg-black mt-1 transition-all duration-300 group-hover:w-24"></div>
+  </div>
+  <br />
 
-                 <div className="flex gap-3 my-4" id='topBtn'>
-  {[1, 2, 3, 4].map(num => (
-    <button
-      key={num}
-      id='btns'
-      onClick={() => setCardView(num)} // Jo button dabayega, vo state change karega
-      className={`px-4 py-2 border rounded ${cardView === num ? 'bg-black text-white' : 'bg-white text-black'}`}
-    >
-      {num}
-    </button>
-  ))}
+ <div className="mainBox w-full md:w-70 px-2 md:ml-[50px]">
+   <SidebarFilter title="Availability" >
+    <label className="block mb-2">
+      <input type="checkbox" className="mr-2" />
+      In Stock
+    </label>
+    <label className="block">
+      <input type="checkbox" className="mr-2" />
+      Out of Stock
+    </label>
+  </SidebarFilter>
+ </div>
+<br /><br />
+  <div className="mainBox w-full md:w-70 px-2 md:ml-[50px]">
+    <SidebarFilter title="Price">
+      <br />
+      <div className="flex flex-col md:flex-row items-center gap-4">
+        <input type="text" name="price" className="h-12 w-full md:w-25 border border-gray-300 rounded-md text-center" placeholder='₹      0'/>
+        
+        <span className="md:px-4">to</span>
+        <input type="text" name="price" className="h-12 w-full md:w-25 border border-gray-300 rounded-md text-center" placeholder='₹    22500'/>
+      </div>
+  </SidebarFilter>
+  </div>
 </div>
 
-<br /><br />
+      <div className="col-span-12 md:col-span-9 px-2 md:px-4">
+        <div className="flex flex-wrap gap-3 my-4" id='topBtn'>
+          {[1, 2, 3, 4].map(num => (
+            <button
+              key={num}
+              id='btns'
+              onClick={() => setCardView(num)}
+              className={`px-4 py-2 border rounded ${cardView === num ? 'bg-black text-white' : 'bg-white text-black'}`}
+            >
+              {num}
+            </button>
+          ))}
+        </div>
+        <br className="hidden md:block" /><br className="hidden md:block" />
+        
+        <div className="flex flex-col md:flex-row gap-4 mb-6">
+          <input
+            type="text"
+            placeholder="Search by name..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="border px-4 py-2 rounded w-full md:w-[300px]"
+          />
+
+          <select 
+            onChange={(e) => setSortTerm(e.target.value)} 
+            className="px-4 py-2 rounded w-full md:w-[200px]"
+            style={{border: "none"}}
+          >
+            <option value="Alphabetically, A to Z">Alphabetically, A to Z</option>
+            <option value="Alphabetically, Z to A">Alphabetically, Z to A</option>
+            <option value="Price High to Low">Price High to Low</option>
+            <option value="Price Low to High">Price Low to High</option>
+          </select>
+        </div>
 
         <div className="grid grid-cols-12">
-         
-          {currentCards.map((el, i) => {
+        
+          {dataSearch.map((el, i) => {
     return (
       <div key={i} className={` ${getColClass()}  p-2 rounded shadow text-center`}id='WomenSectionDetails'>
         <div className="womenSectionImage2">
@@ -201,6 +282,7 @@ const totalPages = Math.ceil(record.data.length / cardsPerPage)
 
 
    
+
 
 
 
@@ -300,6 +382,8 @@ const totalPages = Math.ceil(record.data.length / cardsPerPage)
      </div>
 
     </div>
+
+    <Footer></Footer>
  
     </>
   )
